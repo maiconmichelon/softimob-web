@@ -1,0 +1,7 @@
+= show_for(@tipo_ativo) do |s|
+  = s.attribute :nome
+  = s.attribute :ativo
+
+= link_to 'Edit', edit_tipo_ativo_path(@tipo_ativo)
+|
+= link_to 'Back', tipo_ativos_path

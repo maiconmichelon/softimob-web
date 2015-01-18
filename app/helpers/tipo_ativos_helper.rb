@@ -1,0 +1,2 @@
+module TipoAtivosHelper
+end
