@@ -1,0 +1,8 @@
+= show_for(@acontecimento_chamado) do |s|
+  = s.attribute :data
+  = s.association :funcionario
+  = s.attribute :descricao
+
+= link_to 'Edit', edit_acontecimento_chamado_path(@acontecimento_chamado)
+|
+= link_to 'Back', acontecimento_chamados_path

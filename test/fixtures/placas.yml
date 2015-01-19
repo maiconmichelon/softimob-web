@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numero: MyString
+  funcionario_id: 
+  empresa_id: 
+  imovel_id: 
+
+two:
+  numero: MyString
+  funcionario_id: 
+  empresa_id: 
+  imovel_id: 

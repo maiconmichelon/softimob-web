@@ -1,0 +1,23 @@
+h1 Listing ruas
+
+table
+  thead
+    tr
+      th Nome
+      th Bairro
+      th
+      th
+      th
+
+  tbody
+    - @ruas.each do |rua|
+      tr
+        td = rua.nome
+        td = rua.bairro
+        td = link_to 'Show', rua
+        td = link_to 'Edit', edit_rua_path(rua)
+        td = link_to 'Destroy', rua, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Rua', new_rua_path

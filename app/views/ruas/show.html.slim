@@ -1,0 +1,7 @@
+= show_for(@rua) do |s|
+  = s.attribute :nome
+  = s.association :bairro
+
+= link_to 'Edit', edit_rua_path(@rua)
+|
+= link_to 'Back', ruas_path

@@ -1,0 +1,10 @@
+= simple_form_for(@chafe) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :numero
+    = f.association :imovel
+    = f.input :localizacao
+
+  .form-actions
+    = f.button :submit

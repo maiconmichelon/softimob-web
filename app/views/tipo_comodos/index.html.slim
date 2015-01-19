@@ -1,0 +1,25 @@
+h1 Listing tipo_comodos
+
+table
+  thead
+    tr
+      th Nome
+      th Ativo
+      th Empresa
+      th
+      th
+      th
+
+  tbody
+    - @tipo_comodos.each do |tipo_comodo|
+      tr
+        td = tipo_comodo.nome
+        td = tipo_comodo.ativo
+        td = tipo_comodo.empresa
+        td = link_to 'Show', tipo_comodo
+        td = link_to 'Edit', edit_tipo_comodo_path(tipo_comodo)
+        td = link_to 'Destroy', tipo_comodo, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Tipo comodo', new_tipo_comodo_path

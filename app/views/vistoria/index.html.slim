@@ -1,0 +1,27 @@
+h1 Listing vistoria
+
+table
+  thead
+    tr
+      th Data
+      th Funcionario
+      th Observacoes
+      th Vendaaluguel
+      th
+      th
+      th
+
+  tbody
+    - @vistoria.each do |vistorium|
+      tr
+        td = vistorium.data
+        td = vistorium.funcionario
+        td = vistorium.observacoes
+        td = vistorium.vendaAluguel
+        td = link_to 'Show', vistorium
+        td = link_to 'Edit', edit_vistorium_path(vistorium)
+        td = link_to 'Destroy', vistorium, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Vistorium', new_vistorium_path

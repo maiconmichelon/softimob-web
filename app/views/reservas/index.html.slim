@@ -1,0 +1,37 @@
+h1 Listing reservas
+
+table
+  thead
+    tr
+      th Datareserva
+      th Datavencimento
+      th Cliente
+      th Funcionario
+      th Valor
+      th Valor
+      th Observacoes
+      th Imovel
+      th Resolvido
+      th
+      th
+      th
+
+  tbody
+    - @reservas.each do |reserva|
+      tr
+        td = reserva.dataReserva
+        td = reserva.dataVencimento
+        td = reserva.cliente
+        td = reserva.funcionario
+        td = reserva.valor
+        td = reserva.valor
+        td = reserva.observacoes
+        td = reserva.imovel
+        td = reserva.resolvido
+        td = link_to 'Show', reserva
+        td = link_to 'Edit', edit_reserva_path(reserva)
+        td = link_to 'Destroy', reserva, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Reserva', new_reserva_path

@@ -1,0 +1,9 @@
+= simple_form_for(@estado) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :nome
+    = f.input :uf
+
+  .form-actions
+    = f.button :submit

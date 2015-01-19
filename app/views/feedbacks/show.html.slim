@@ -1,0 +1,10 @@
+= show_for(@feedback) do |s|
+  = s.attribute :data
+  = s.association :funcionario
+  = s.association :cliente
+  = s.attribute :observacoes
+  = s.association :imovel
+
+= link_to 'Edit', edit_feedback_path(@feedback)
+|
+= link_to 'Back', feedbacks_path

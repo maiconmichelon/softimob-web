@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: 2015-01-18
+  dataFechamento: 2015-01-18
+  cliente_id: 
+  funcionario_id: 
+  valor: 
+  valor: 
+  observacoes: MyString
+  status: 1
+  proposta_id: 
+  tipoContraProposta: 1
+  imovel_id: 
+
+two:
+  data: 2015-01-18
+  dataFechamento: 2015-01-18
+  cliente_id: 
+  funcionario_id: 
+  valor: 
+  valor: 
+  observacoes: MyString
+  status: 1
+  proposta_id: 
+  tipoContraProposta: 1
+  imovel_id: 

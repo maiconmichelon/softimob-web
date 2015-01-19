@@ -1,0 +1,11 @@
+= simple_form_for(@endereco) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :cep
+    = f.association :rua
+    = f.input :numero
+    = f.input :complemento
+
+  .form-actions
+    = f.button :submit

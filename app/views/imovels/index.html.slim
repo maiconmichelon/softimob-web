@@ -1,0 +1,35 @@
+h1 Listing imovels
+
+table
+  thead
+    tr
+      th Ativo
+      th Metragem
+      th Funcionario
+      th Cliente
+      th Tipoimovel
+      th Observacoes
+      th Endereco
+      th Empresa
+      th
+      th
+      th
+
+  tbody
+    - @imovels.each do |imovel|
+      tr
+        td = imovel.ativo
+        td = imovel.metragem
+        td = imovel.funcionario
+        td = imovel.cliente
+        td = imovel.tipoImovel
+        td = imovel.observacoes
+        td = imovel.endereco
+        td = imovel.empresa
+        td = link_to 'Show', imovel
+        td = link_to 'Edit', edit_imovel_path(imovel)
+        td = link_to 'Destroy', imovel, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Imovel', new_imovel_path

@@ -1,0 +1,10 @@
+= simple_form_for(@departamento) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :nome
+    = f.input :ativo
+    = f.association :empresa
+
+  .form-actions
+    = f.button :submit

@@ -1,0 +1,10 @@
+= simple_form_for(@acontecimento_chamado) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :data
+    = f.association :funcionario
+    = f.input :descricao
+
+  .form-actions
+    = f.button :submit

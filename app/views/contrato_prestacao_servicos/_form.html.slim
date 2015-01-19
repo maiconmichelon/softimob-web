@@ -1,0 +1,19 @@
+= simple_form_for(@contrato_prestacao_servico) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :valorImovel
+    = f.input :valorImovel
+    = f.input :tipo
+    = f.association :imovel
+    = f.input :divulgar
+    = f.input :dataInicio
+    = f.input :dataVencimento
+    = f.association :funcionario
+    = f.association :cliente
+    = f.input :resolvido
+    = f.input :dataFechamento
+    = f.association :modeloContrato
+
+  .form-actions
+    = f.button :submit

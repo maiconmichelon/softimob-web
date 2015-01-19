@@ -1,0 +1,18 @@
+= simple_form_for(@propostum) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :data
+    = f.input :dataFechamento
+    = f.association :cliente
+    = f.association :funcionario
+    = f.input :valor
+    = f.input :valor
+    = f.input :observacoes
+    = f.input :status
+    = f.association :proposta
+    = f.input :tipoContraProposta
+    = f.association :imovel
+
+  .form-actions
+    = f.button :submit

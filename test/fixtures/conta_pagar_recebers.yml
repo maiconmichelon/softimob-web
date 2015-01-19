@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  valor: 
+  valor: 
+  valorJurosDesconto: 
+  valorJurosDesconto: 
+  dataConta: 2015-01-18
+  dataVencimento: 2015-01-18
+  dataPagamento: 2015-01-18
+  OrigemConta_id: 
+  tipo: 1
+  movimentacaoContabil_id: 
+  observacoes: MyString
+
+two:
+  valor: 
+  valor: 
+  valorJurosDesconto: 
+  valorJurosDesconto: 
+  dataConta: 2015-01-18
+  dataVencimento: 2015-01-18
+  dataPagamento: 2015-01-18
+  OrigemConta_id: 
+  tipo: 1
+  movimentacaoContabil_id: 
+  observacoes: MyString

@@ -1,0 +1,10 @@
+= simple_form_for(@pessoa_juridica) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :cnpj
+    = f.input :inscricaoEstadual
+    = f.association :pessoaFisica
+
+  .form-actions
+    = f.button :submit

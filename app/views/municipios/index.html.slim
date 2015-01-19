@@ -1,0 +1,23 @@
+h1 Listing municipios
+
+table
+  thead
+    tr
+      th Nome
+      th Estado
+      th
+      th
+      th
+
+  tbody
+    - @municipios.each do |municipio|
+      tr
+        td = municipio.nome
+        td = municipio.estado
+        td = link_to 'Show', municipio
+        td = link_to 'Edit', edit_municipio_path(municipio)
+        td = link_to 'Destroy', municipio, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Municipio', new_municipio_path

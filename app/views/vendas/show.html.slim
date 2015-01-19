@@ -1,0 +1,7 @@
+= show_for(@venda) do |s|
+  = s.association :proprietario
+  = s.attribute :fechado
+
+= link_to 'Edit', edit_venda_path(@venda)
+|
+= link_to 'Back', vendas_path

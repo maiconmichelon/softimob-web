@@ -1,0 +1,17 @@
+= show_for(@contrato_prestacao_servico) do |s|
+  = s.attribute :valorImovel
+  = s.attribute :valorImovel
+  = s.attribute :tipo
+  = s.association :imovel
+  = s.attribute :divulgar
+  = s.attribute :dataInicio
+  = s.attribute :dataVencimento
+  = s.association :funcionario
+  = s.association :cliente
+  = s.attribute :resolvido
+  = s.attribute :dataFechamento
+  = s.association :modeloContrato
+
+= link_to 'Edit', edit_contrato_prestacao_servico_path(@contrato_prestacao_servico)
+|
+= link_to 'Back', contrato_prestacao_servicos_path

@@ -1,0 +1,9 @@
+= show_for(@vistorium) do |s|
+  = s.attribute :data
+  = s.association :funcionario
+  = s.attribute :observacoes
+  = s.association :vendaAluguel
+
+= link_to 'Edit', edit_vistorium_path(@vistorium)
+|
+= link_to 'Back', vistoria_path

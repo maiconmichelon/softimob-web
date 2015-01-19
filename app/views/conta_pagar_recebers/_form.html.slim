@@ -1,0 +1,18 @@
+= simple_form_for(@conta_pagar_receber) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :valor
+    = f.input :valor
+    = f.input :valorJurosDesconto
+    = f.input :valorJurosDesconto
+    = f.input :dataConta
+    = f.input :dataVencimento
+    = f.input :dataPagamento
+    = f.association :OrigemConta
+    = f.input :tipo
+    = f.association :movimentacaoContabil
+    = f.input :observacoes
+
+  .form-actions
+    = f.button :submit

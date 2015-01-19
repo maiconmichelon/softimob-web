@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cpf: MyString
+  rg: MyString
+  filiacao: MyString
+  estadoCivil: 1
+  nacionalidade: MyString
+
+two:
+  cpf: MyString
+  rg: MyString
+  filiacao: MyString
+  estadoCivil: 1
+  nacionalidade: MyString

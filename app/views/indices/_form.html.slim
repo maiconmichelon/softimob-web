@@ -1,0 +1,9 @@
+= simple_form_for(@index) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :nome
+    = f.input :ativo
+
+  .form-actions
+    = f.button :submit

@@ -1,0 +1,35 @@
+h1 Listing comissionados
+
+table
+  thead
+    tr
+      th Nome
+      th Telefone
+      th Celular
+      th Email
+      th Datanascimento
+      th Ativo
+      th Endereco
+      th Empresa
+      th
+      th
+      th
+
+  tbody
+    - @comissionados.each do |comissionado|
+      tr
+        td = comissionado.nome
+        td = comissionado.telefone
+        td = comissionado.celular
+        td = comissionado.email
+        td = comissionado.dataNascimento
+        td = comissionado.ativo
+        td = comissionado.endereco
+        td = comissionado.empresa
+        td = link_to 'Show', comissionado
+        td = link_to 'Edit', edit_comissionado_path(comissionado)
+        td = link_to 'Destroy', comissionado, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Comissionado', new_comissionado_path

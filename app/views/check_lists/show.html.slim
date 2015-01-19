@@ -1,0 +1,8 @@
+= show_for(@check_list) do |s|
+  = s.attribute :nome
+  = s.attribute :ativo
+  = s.association :empresa
+
+= link_to 'Edit', edit_check_list_path(@check_list)
+|
+= link_to 'Back', check_lists_path

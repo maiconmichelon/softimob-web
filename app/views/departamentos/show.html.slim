@@ -1,0 +1,8 @@
+= show_for(@departamento) do |s|
+  = s.attribute :nome
+  = s.attribute :ativo
+  = s.association :empresa
+
+= link_to 'Edit', edit_departamento_path(@departamento)
+|
+= link_to 'Back', departamentos_path

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  valorImovel: 
+  valorImovel: 
+  tipo: 1
+  imovel_id: 
+  divulgar: false
+  dataInicio: 2015-01-18
+  dataVencimento: 2015-01-18
+  funcionario_id: 
+  cliente_id: 
+  resolvido: false
+  dataFechamento: 2015-01-18
+  modeloContrato_id: 
+
+two:
+  valorImovel: 
+  valorImovel: 
+  tipo: 1
+  imovel_id: 
+  divulgar: false
+  dataInicio: 2015-01-18
+  dataVencimento: 2015-01-18
+  funcionario_id: 
+  cliente_id: 
+  resolvido: false
+  dataFechamento: 2015-01-18
+  modeloContrato_id: 

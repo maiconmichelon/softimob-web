@@ -1,0 +1,2 @@
+module TipoComodosHelper
+end

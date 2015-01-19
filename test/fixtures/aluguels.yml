@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cliente_id: 
+  dataVencimento: 2015-01-18
+  indice_id: 
+  resolvido: false
+  dataFechamento: 2015-01-18
+
+two:
+  cliente_id: 
+  dataVencimento: 2015-01-18
+  indice_id: 
+  resolvido: false
+  dataFechamento: 2015-01-18

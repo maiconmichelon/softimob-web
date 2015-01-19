@@ -1,0 +1,25 @@
+h1 Listing chaves
+
+table
+  thead
+    tr
+      th Numero
+      th Imovel
+      th Localizacao
+      th
+      th
+      th
+
+  tbody
+    - @chaves.each do |chafe|
+      tr
+        td = chafe.numero
+        td = chafe.imovel
+        td = chafe.localizacao
+        td = link_to 'Show', chafe
+        td = link_to 'Edit', edit_chafe_path(chafe)
+        td = link_to 'Destroy', chafe, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Chave', new_chafe_path

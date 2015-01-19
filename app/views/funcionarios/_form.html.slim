@@ -1,0 +1,9 @@
+= simple_form_for(@funcionario) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :departamento
+    = f.input :dataAdmissao
+
+  .form-actions
+    = f.button :submit

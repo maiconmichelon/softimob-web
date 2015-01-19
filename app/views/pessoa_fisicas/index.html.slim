@@ -1,0 +1,29 @@
+h1 Listing pessoa_fisicas
+
+table
+  thead
+    tr
+      th Cpf
+      th Rg
+      th Filiacao
+      th Estadocivil
+      th Nacionalidade
+      th
+      th
+      th
+
+  tbody
+    - @pessoa_fisicas.each do |pessoa_fisica|
+      tr
+        td = pessoa_fisica.cpf
+        td = pessoa_fisica.rg
+        td = pessoa_fisica.filiacao
+        td = pessoa_fisica.estadoCivil
+        td = pessoa_fisica.nacionalidade
+        td = link_to 'Show', pessoa_fisica
+        td = link_to 'Edit', edit_pessoa_fisica_path(pessoa_fisica)
+        td = link_to 'Destroy', pessoa_fisica, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Pessoa fisica', new_pessoa_fisica_path

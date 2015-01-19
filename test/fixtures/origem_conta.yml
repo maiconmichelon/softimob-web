@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  planoConta_id: 
+  contaContraPartida_id: 
+  ativo: false
+  empresa_id: 
+
+two:
+  nome: MyString
+  planoConta_id: 
+  contaContraPartida_id: 
+  ativo: false
+  empresa_id: 

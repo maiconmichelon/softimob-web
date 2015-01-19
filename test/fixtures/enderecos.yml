@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cep: MyString
+  rua_id: 
+  numero: MyString
+  complemento: MyString
+
+two:
+  cep: MyString
+  rua_id: 
+  numero: MyString
+  complemento: MyString

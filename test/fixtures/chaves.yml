@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numero: MyString
+  imovel_id: 
+  localizacao: 1
+
+two:
+  numero: MyString
+  imovel_id: 
+  localizacao: 1

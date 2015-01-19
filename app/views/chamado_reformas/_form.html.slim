@@ -1,0 +1,12 @@
+= simple_form_for(@chamado_reforma) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :aluguel
+    = f.input :data
+    = f.association :funcionario
+    = f.input :problema
+    = f.association :finalizacaoChamadoReforma
+
+  .form-actions
+    = f.button :submit

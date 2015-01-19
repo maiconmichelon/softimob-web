@@ -1,0 +1,9 @@
+= simple_form_for(@bairro) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :nome
+    = f.association :municipio
+
+  .form-actions
+    = f.button :submit

@@ -1,0 +1,29 @@
+h1 Listing plano_conta
+
+table
+  thead
+    tr
+      th Codigo
+      th Nome
+      th Tipo
+      th Ativo
+      th Empresa
+      th
+      th
+      th
+
+  tbody
+    - @plano_conta.each do |plano_contum|
+      tr
+        td = plano_contum.codigo
+        td = plano_contum.nome
+        td = plano_contum.tipo
+        td = plano_contum.ativo
+        td = plano_contum.empresa
+        td = link_to 'Show', plano_contum
+        td = link_to 'Edit', edit_plano_contum_path(plano_contum)
+        td = link_to 'Destroy', plano_contum, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Plano contum', new_plano_contum_path

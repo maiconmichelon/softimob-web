@@ -1,0 +1,11 @@
+= simple_form_for(@vistorium) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :data
+    = f.association :funcionario
+    = f.input :observacoes
+    = f.association :vendaAluguel
+
+  .form-actions
+    = f.button :submit

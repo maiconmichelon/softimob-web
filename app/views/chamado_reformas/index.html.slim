@@ -1,0 +1,29 @@
+h1 Listing chamado_reformas
+
+table
+  thead
+    tr
+      th Aluguel
+      th Data
+      th Funcionario
+      th Problema
+      th Finalizacaochamadoreforma
+      th
+      th
+      th
+
+  tbody
+    - @chamado_reformas.each do |chamado_reforma|
+      tr
+        td = chamado_reforma.aluguel
+        td = chamado_reforma.data
+        td = chamado_reforma.funcionario
+        td = chamado_reforma.problema
+        td = chamado_reforma.finalizacaoChamadoReforma
+        td = link_to 'Show', chamado_reforma
+        td = link_to 'Edit', edit_chamado_reforma_path(chamado_reforma)
+        td = link_to 'Destroy', chamado_reforma, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Chamado reforma', new_chamado_reforma_path

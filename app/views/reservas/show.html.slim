@@ -1,0 +1,14 @@
+= show_for(@reserva) do |s|
+  = s.attribute :dataReserva
+  = s.attribute :dataVencimento
+  = s.association :cliente
+  = s.association :funcionario
+  = s.attribute :valor
+  = s.attribute :valor
+  = s.attribute :observacoes
+  = s.association :imovel
+  = s.attribute :resolvido
+
+= link_to 'Edit', edit_reserva_path(@reserva)
+|
+= link_to 'Back', reservas_path

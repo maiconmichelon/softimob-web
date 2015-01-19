@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contratoPrestacaoServico_id: 
+  modeloContrato_id: 
+  cliente_id: 
+  funcionario_id: 
+  valor: 
+  valor: 
+  dataAssinaturaContrato: 2015-01-18
+
+two:
+  contratoPrestacaoServico_id: 
+  modeloContrato_id: 
+  cliente_id: 
+  funcionario_id: 
+  valor: 
+  valor: 
+  dataAssinaturaContrato: 2015-01-18

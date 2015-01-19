@@ -1,0 +1,8 @@
+= show_for(@pessoa_juridica) do |s|
+  = s.attribute :cnpj
+  = s.attribute :inscricaoEstadual
+  = s.association :pessoaFisica
+
+= link_to 'Edit', edit_pessoa_juridica_path(@pessoa_juridica)
+|
+= link_to 'Back', pessoa_juridicas_path

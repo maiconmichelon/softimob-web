@@ -1,0 +1,12 @@
+= simple_form_for(@pessoa_fisica) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :cpf
+    = f.input :rg
+    = f.input :filiacao
+    = f.input :estadoCivil
+    = f.input :nacionalidade
+
+  .form-actions
+    = f.button :submit

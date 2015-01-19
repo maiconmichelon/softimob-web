@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cnpj: MyString
+  inscricaoEstadual: MyString
+  pessoaFisica_id: 
+
+two:
+  cnpj: MyString
+  inscricaoEstadual: MyString
+  pessoaFisica_id: 

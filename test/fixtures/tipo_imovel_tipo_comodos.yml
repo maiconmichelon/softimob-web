@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipoImovel_id: 
+  tipoComodo_id: 
+  preSelecionado: false
+
+two:
+  tipoImovel_id: 
+  tipoComodo_id: 
+  preSelecionado: false

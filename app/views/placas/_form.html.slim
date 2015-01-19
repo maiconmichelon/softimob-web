@@ -1,0 +1,11 @@
+= simple_form_for(@placa) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :numero
+    = f.association :funcionario
+    = f.association :empresa
+    = f.association :imovel
+
+  .form-actions
+    = f.button :submit

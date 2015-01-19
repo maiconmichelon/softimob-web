@@ -1,0 +1,16 @@
+= show_for(@propostum) do |s|
+  = s.attribute :data
+  = s.attribute :dataFechamento
+  = s.association :cliente
+  = s.association :funcionario
+  = s.attribute :valor
+  = s.attribute :valor
+  = s.attribute :observacoes
+  = s.attribute :status
+  = s.association :proposta
+  = s.attribute :tipoContraProposta
+  = s.association :imovel
+
+= link_to 'Edit', edit_propostum_path(@propostum)
+|
+= link_to 'Back', proposta_path

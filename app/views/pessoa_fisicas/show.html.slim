@@ -1,0 +1,10 @@
+= show_for(@pessoa_fisica) do |s|
+  = s.attribute :cpf
+  = s.attribute :rg
+  = s.attribute :filiacao
+  = s.attribute :estadoCivil
+  = s.attribute :nacionalidade
+
+= link_to 'Edit', edit_pessoa_fisica_path(@pessoa_fisica)
+|
+= link_to 'Back', pessoa_fisicas_path

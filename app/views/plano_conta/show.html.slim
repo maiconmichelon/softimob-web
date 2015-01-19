@@ -1,0 +1,10 @@
+= show_for(@plano_contum) do |s|
+  = s.attribute :codigo
+  = s.attribute :nome
+  = s.attribute :tipo
+  = s.attribute :ativo
+  = s.association :empresa
+
+= link_to 'Edit', edit_plano_contum_path(@plano_contum)
+|
+= link_to 'Back', plano_conta_path

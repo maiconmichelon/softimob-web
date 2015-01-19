@@ -1,0 +1,25 @@
+h1 Listing pessoa_juridicas
+
+table
+  thead
+    tr
+      th Cnpj
+      th Inscricaoestadual
+      th Pessoafisica
+      th
+      th
+      th
+
+  tbody
+    - @pessoa_juridicas.each do |pessoa_juridica|
+      tr
+        td = pessoa_juridica.cnpj
+        td = pessoa_juridica.inscricaoEstadual
+        td = pessoa_juridica.pessoaFisica
+        td = link_to 'Show', pessoa_juridica
+        td = link_to 'Edit', edit_pessoa_juridica_path(pessoa_juridica)
+        td = link_to 'Destroy', pessoa_juridica, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Pessoa juridica', new_pessoa_juridica_path

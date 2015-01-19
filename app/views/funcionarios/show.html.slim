@@ -1,0 +1,7 @@
+= show_for(@funcionario) do |s|
+  = s.association :departamento
+  = s.attribute :dataAdmissao
+
+= link_to 'Edit', edit_funcionario_path(@funcionario)
+|
+= link_to 'Back', funcionarios_path

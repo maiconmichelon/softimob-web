@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  valor: 
+  valor: 
+  data: 2015-01-18
+  empresa_id: 
+
+two:
+  valor: 
+  valor: 
+  data: 2015-01-18
+  empresa_id: 

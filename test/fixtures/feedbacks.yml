@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: 2015-01-18
+  funcionario_id: 
+  cliente_id: 
+  observacoes: MyString
+  imovel_id: 
+
+two:
+  data: 2015-01-18
+  funcionario_id: 
+  cliente_id: 
+  observacoes: MyString
+  imovel_id: 

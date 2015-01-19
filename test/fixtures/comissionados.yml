@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  telefone: MyString
+  celular: MyString
+  email: MyString
+  dataNascimento: 2015-01-18
+  ativo: false
+  endereco_id: 
+  empresa_id: 
+
+two:
+  nome: MyString
+  telefone: MyString
+  celular: MyString
+  email: MyString
+  dataNascimento: 2015-01-18
+  ativo: false
+  endereco_id: 
+  empresa_id: 

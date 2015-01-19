@@ -1,0 +1,9 @@
+= simple_form_for(@venda) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :proprietario
+    = f.input :fechado
+
+  .form-actions
+    = f.button :submit

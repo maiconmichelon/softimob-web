@@ -1,0 +1,12 @@
+= simple_form_for(@plano_contum) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :codigo
+    = f.input :nome
+    = f.input :tipo
+    = f.input :ativo
+    = f.association :empresa
+
+  .form-actions
+    = f.button :submit

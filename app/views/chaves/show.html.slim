@@ -1,0 +1,8 @@
+= show_for(@chave) do |s|
+  = s.attribute :numero
+  = s.association :imovel
+  = s.attribute :localizacao
+
+= link_to 'Edit', edit_chave_path(@chave)
+|
+= link_to 'Back', chaves_path

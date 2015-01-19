@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  aluguel_id: 
+  data: 2015-01-18
+  funcionario_id: 
+  problema: MyString
+  finalizacaoChamadoReforma_id: 
+
+two:
+  aluguel_id: 
+  data: 2015-01-18
+  funcionario_id: 
+  problema: MyString
+  finalizacaoChamadoReforma_id: 

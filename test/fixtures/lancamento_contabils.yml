@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipo: 1
+  historico: MyString
+  valor: 
+  valor: 
+  planoConta_id: 
+  movimentacaoContabil_id: 
+
+two:
+  tipo: 1
+  historico: MyString
+  valor: 
+  valor: 
+  planoConta_id: 
+  movimentacaoContabil_id: 

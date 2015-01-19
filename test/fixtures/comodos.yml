@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipoComodo_id: 
+  quantidade: 1
+  descricao: MyString
+  imovel_id: 
+
+two:
+  tipoComodo_id: 
+  quantidade: 1
+  descricao: MyString
+  imovel_id: 

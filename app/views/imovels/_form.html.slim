@@ -1,0 +1,15 @@
+= simple_form_for(@imovel) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :ativo
+    = f.input :metragem
+    = f.association :funcionario
+    = f.association :cliente
+    = f.association :tipoImovel
+    = f.input :observacoes
+    = f.association :endereco
+    = f.association :empresa
+
+  .form-actions
+    = f.button :submit

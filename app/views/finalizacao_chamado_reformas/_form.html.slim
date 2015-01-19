@@ -1,0 +1,11 @@
+= simple_form_for(@finalizacao_chamado_reforma) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :data
+    = f.association :funcionario
+    = f.input :descricaoConclusao
+    = f.input :status
+
+  .form-actions
+    = f.button :submit

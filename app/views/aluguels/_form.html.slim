@@ -1,0 +1,12 @@
+= simple_form_for(@aluguel) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :cliente
+    = f.input :dataVencimento
+    = f.association :indice
+    = f.input :resolvido
+    = f.input :dataFechamento
+
+  .form-actions
+    = f.button :submit

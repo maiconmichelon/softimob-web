@@ -1,0 +1,23 @@
+h1 Listing bairros
+
+table
+  thead
+    tr
+      th Nome
+      th Municipio
+      th
+      th
+      th
+
+  tbody
+    - @bairros.each do |bairro|
+      tr
+        td = bairro.nome
+        td = bairro.municipio
+        td = link_to 'Show', bairro
+        td = link_to 'Edit', edit_bairro_path(bairro)
+        td = link_to 'Destroy', bairro, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Bairro', new_bairro_path

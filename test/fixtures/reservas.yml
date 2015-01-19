@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dataReserva: 2015-01-18
+  dataVencimento: 2015-01-18
+  cliente_id: 
+  funcionario_id: 
+  valor: 
+  valor: 
+  observacoes: MyString
+  imovel_id: 
+  resolvido: false
+
+two:
+  dataReserva: 2015-01-18
+  dataVencimento: 2015-01-18
+  cliente_id: 
+  funcionario_id: 
+  valor: 
+  valor: 
+  observacoes: MyString
+  imovel_id: 
+  resolvido: false

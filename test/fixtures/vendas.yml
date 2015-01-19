@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  proprietario_id: 
+  fechado: false
+
+two:
+  proprietario_id: 
+  fechado: false

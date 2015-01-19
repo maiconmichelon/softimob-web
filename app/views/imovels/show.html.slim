@@ -1,0 +1,13 @@
+= show_for(@imovel) do |s|
+  = s.attribute :ativo
+  = s.attribute :metragem
+  = s.association :funcionario
+  = s.association :cliente
+  = s.association :tipoImovel
+  = s.attribute :observacoes
+  = s.association :endereco
+  = s.association :empresa
+
+= link_to 'Edit', edit_imovel_path(@imovel)
+|
+= link_to 'Back', imovels_path

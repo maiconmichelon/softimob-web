@@ -1,0 +1,9 @@
+= show_for(@comodo) do |s|
+  = s.association :tipoComodo
+  = s.attribute :quantidade
+  = s.attribute :descricao
+  = s.association :imovel
+
+= link_to 'Edit', edit_comodo_path(@comodo)
+|
+= link_to 'Back', comodos_path

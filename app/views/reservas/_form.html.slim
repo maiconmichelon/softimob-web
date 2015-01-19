@@ -1,0 +1,16 @@
+= simple_form_for(@reserva) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :dataReserva
+    = f.input :dataVencimento
+    = f.association :cliente
+    = f.association :funcionario
+    = f.input :valor
+    = f.input :valor
+    = f.input :observacoes
+    = f.association :imovel
+    = f.input :resolvido
+
+  .form-actions
+    = f.button :submit

@@ -1,0 +1,13 @@
+= simple_form_for(@lancamento_contabil) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :tipo
+    = f.input :historico
+    = f.input :valor
+    = f.input :valor
+    = f.association :planoConta
+    = f.association :movimentacaoContabil
+
+  .form-actions
+    = f.button :submit

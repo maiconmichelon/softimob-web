@@ -1,0 +1,27 @@
+h1 Listing placas
+
+table
+  thead
+    tr
+      th Numero
+      th Funcionario
+      th Empresa
+      th Imovel
+      th
+      th
+      th
+
+  tbody
+    - @placas.each do |placa|
+      tr
+        td = placa.numero
+        td = placa.funcionario
+        td = placa.empresa
+        td = placa.imovel
+        td = link_to 'Show', placa
+        td = link_to 'Edit', edit_placa_path(placa)
+        td = link_to 'Destroy', placa, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Placa', new_placa_path

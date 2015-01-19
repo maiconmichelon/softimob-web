@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: 2015-01-18
+  funcionario_id: 
+  descricaoConclusao: MyString
+  status: 1
+
+two:
+  data: 2015-01-18
+  funcionario_id: 
+  descricaoConclusao: MyString
+  status: 1

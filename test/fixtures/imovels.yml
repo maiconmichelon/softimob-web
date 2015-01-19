@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ativo: false
+  metragem: 1
+  funcionario_id: 
+  cliente_id: 
+  tipoImovel_id: 
+  observacoes: MyString
+  endereco_id: 
+  empresa_id: 
+
+two:
+  ativo: false
+  metragem: 1
+  funcionario_id: 
+  cliente_id: 
+  tipoImovel_id: 
+  observacoes: MyString
+  endereco_id: 
+  empresa_id: 

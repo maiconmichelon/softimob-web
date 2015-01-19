@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  indice_id: 
+  data: 2015-01-18
+  porcentagem: 
+  porcentagem: 
+
+two:
+  indice_id: 
+  data: 2015-01-18
+  porcentagem: 
+  porcentagem: 

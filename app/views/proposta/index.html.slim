@@ -1,0 +1,41 @@
+h1 Listing proposta
+
+table
+  thead
+    tr
+      th Data
+      th Datafechamento
+      th Cliente
+      th Funcionario
+      th Valor
+      th Valor
+      th Observacoes
+      th Status
+      th Proposta
+      th Tipocontraproposta
+      th Imovel
+      th
+      th
+      th
+
+  tbody
+    - @proposta.each do |propostum|
+      tr
+        td = propostum.data
+        td = propostum.dataFechamento
+        td = propostum.cliente
+        td = propostum.funcionario
+        td = propostum.valor
+        td = propostum.valor
+        td = propostum.observacoes
+        td = propostum.status
+        td = propostum.proposta
+        td = propostum.tipoContraProposta
+        td = propostum.imovel
+        td = link_to 'Show', propostum
+        td = link_to 'Edit', edit_propostum_path(propostum)
+        td = link_to 'Destroy', propostum, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Propostum', new_propostum_path

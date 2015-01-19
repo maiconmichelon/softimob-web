@@ -1,0 +1,15 @@
+= simple_form_for(@comissionado) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :nome
+    = f.input :telefone
+    = f.input :celular
+    = f.input :email
+    = f.input :dataNascimento
+    = f.input :ativo
+    = f.association :endereco
+    = f.association :empresa
+
+  .form-actions
+    = f.button :submit

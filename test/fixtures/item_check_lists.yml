@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  checkList_id: 
+  nome: MyString
+  valor: MyString
+  finalizado: false
+  obrigatorio: false
+
+two:
+  checkList_id: 
+  nome: MyString
+  valor: MyString
+  finalizado: false
+  obrigatorio: false

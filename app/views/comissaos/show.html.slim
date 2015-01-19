@@ -1,0 +1,7 @@
+= show_for(@comissao) do |s|
+  = s.association :vendaAluguel
+  = s.association :comissionado
+
+= link_to 'Edit', edit_comissao_path(@comissao)
+|
+= link_to 'Back', comissaos_path

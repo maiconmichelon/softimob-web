@@ -1,0 +1,33 @@
+h1 Listing venda_aluguels
+
+table
+  thead
+    tr
+      th Contratoprestacaoservico
+      th Modelocontrato
+      th Cliente
+      th Funcionario
+      th Valor
+      th Valor
+      th Dataassinaturacontrato
+      th
+      th
+      th
+
+  tbody
+    - @venda_aluguels.each do |venda_aluguel|
+      tr
+        td = venda_aluguel.contratoPrestacaoServico
+        td = venda_aluguel.modeloContrato
+        td = venda_aluguel.cliente
+        td = venda_aluguel.funcionario
+        td = venda_aluguel.valor
+        td = venda_aluguel.valor
+        td = venda_aluguel.dataAssinaturaContrato
+        td = link_to 'Show', venda_aluguel
+        td = link_to 'Edit', edit_venda_aluguel_path(venda_aluguel)
+        td = link_to 'Destroy', venda_aluguel, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Venda aluguel', new_venda_aluguel_path
