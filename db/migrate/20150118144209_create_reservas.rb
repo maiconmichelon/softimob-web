@@ -5,8 +5,7 @@ class CreateReservas < ActiveRecord::Migration
       t.date :dataVencimento
       t.references :cliente, index: true
       t.references :funcionario, index: true
-      t.decimal12 :valor
-      t.decimal2 :valor
+      t.decimal :valor, precision: 12, scale: 2
       t.string :observacoes
       t.references :imovel, index: true
       t.boolean :resolvido
