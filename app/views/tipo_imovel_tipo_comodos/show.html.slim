@@ -1,8 +1,0 @@
-= show_for(@tipo_imovel_tipo_comodo) do |s|
-  = s.association :tipoImovel
-  = s.association :tipoComodo
-  = s.attribute :preSelecionado
-
-= link_to 'Edit', edit_tipo_imovel_tipo_comodo_path(@tipo_imovel_tipo_comodo)
-|
-= link_to 'Back', tipo_imovel_tipo_comodos_path

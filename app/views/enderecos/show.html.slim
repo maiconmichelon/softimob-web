@@ -1,9 +1,0 @@
-= show_for(@endereco) do |s|
-  = s.attribute :cep
-  = s.association :rua
-  = s.attribute :numero
-  = s.attribute :complemento
-
-= link_to 'Edit', edit_endereco_path(@endereco)
-|
-= link_to 'Back', enderecos_path

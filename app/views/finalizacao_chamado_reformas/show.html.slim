@@ -1,9 +1,0 @@
-= show_for(@finalizacao_chamado_reforma) do |s|
-  = s.attribute :data
-  = s.association :funcionario
-  = s.attribute :descricaoConclusao
-  = s.attribute :status
-
-= link_to 'Edit', edit_finalizacao_chamado_reforma_path(@finalizacao_chamado_reforma)
-|
-= link_to 'Back', finalizacao_chamado_reformas_path
