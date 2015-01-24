@@ -1,8 +1,8 @@
 class CreateRuas < ActiveRecord::Migration
   def change
     create_table :ruas do |t|
-      t.string :nome
-      t.references :bairro, index: true
+      t.string :nome, null: false
+      t.references :bairro, index: true, required: true
 
       t.timestamps
     end

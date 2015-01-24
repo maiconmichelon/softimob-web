@@ -26,19 +26,6 @@ ActiveRecord::Schema.define(version: 20150118155403) do
 
   add_index "acontecimentos_chamado", ["funcionario_id"], name: "index_acontecimentos_chamado_on_funcionario_id", using: :btree
 
-  create_table "alugueis", force: true do |t|
-    t.integer  "cliente_id"
-    t.date     "dataVencimento"
-    t.integer  "indice_id"
-    t.boolean  "resolvido"
-    t.date     "dataFechamento"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "alugueis", ["cliente_id"], name: "index_alugueis_on_cliente_id", using: :btree
-  add_index "alugueis", ["indice_id"], name: "index_alugueis_on_indice_id", using: :btree
-
   create_table "bairros", force: true do |t|
     t.string   "nome"
     t.integer  "municipio_id"
@@ -438,14 +425,17 @@ ActiveRecord::Schema.define(version: 20150118155403) do
 
   create_table "tipos_ativo", force: true do |t|
     t.string   "nome"
-    t.boolean  "ativo"
+    t.boolean  "ativo",      default: true, null: false
+    t.integer  "empresa_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "tipos_ativo", ["empresa_id"], name: "index_tipos_ativo_on_empresa_id", using: :btree
+
   create_table "tipos_comodo", force: true do |t|
     t.string   "nome"
-    t.boolean  "ativo"
+    t.boolean  "ativo",      default: true, null: false
     t.integer  "empresa_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -456,22 +446,13 @@ ActiveRecord::Schema.define(version: 20150118155403) do
   create_table "tipos_imovel_tipos_comodo", force: true do |t|
     t.integer  "tipoImovel_id"
     t.integer  "tipoComodo_id"
-    t.boolean  "preSelecionado"
+    t.boolean  "preSelecionado", default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "tipos_imovel_tipos_comodo", ["tipoComodo_id"], name: "index_tipos_imovel_tipos_comodo_on_tipoComodo_id", using: :btree
   add_index "tipos_imovel_tipos_comodo", ["tipoImovel_id"], name: "index_tipos_imovel_tipos_comodo_on_tipoImovel_id", using: :btree
-
-  create_table "vendas", force: true do |t|
-    t.integer  "proprietario_id"
-    t.boolean  "fechado"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "vendas", ["proprietario_id"], name: "index_vendas_on_proprietario_id", using: :btree
 
   create_table "vendas_alugueis", force: true do |t|
     t.integer  "contratoPrestacaoServico_id"
@@ -480,6 +461,13 @@ ActiveRecord::Schema.define(version: 20150118155403) do
     t.integer  "funcionario_id"
     t.decimal  "valor",                       precision: 12, scale: 2
     t.date     "dataAssinaturaContrato"
+    t.string   "type"
+    t.integer  "proprietario_id"
+    t.boolean  "fechado"
+    t.date     "dataVencimento"
+    t.integer  "indice_id"
+    t.boolean  "resolvido"
+    t.date     "dataFechamento"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -487,7 +475,9 @@ ActiveRecord::Schema.define(version: 20150118155403) do
   add_index "vendas_alugueis", ["cliente_id"], name: "index_vendas_alugueis_on_cliente_id", using: :btree
   add_index "vendas_alugueis", ["contratoPrestacaoServico_id"], name: "index_vendas_alugueis_on_contratoPrestacaoServico_id", using: :btree
   add_index "vendas_alugueis", ["funcionario_id"], name: "index_vendas_alugueis_on_funcionario_id", using: :btree
+  add_index "vendas_alugueis", ["indice_id"], name: "index_vendas_alugueis_on_indice_id", using: :btree
   add_index "vendas_alugueis", ["modeloContrato_id"], name: "index_vendas_alugueis_on_modeloContrato_id", using: :btree
+  add_index "vendas_alugueis", ["proprietario_id"], name: "index_vendas_alugueis_on_proprietario_id", using: :btree
 
   create_table "vistorias", force: true do |t|
     t.date     "data"

@@ -44,4 +44,23 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
 
   # Incontáveis
   inflect.uncountable %w( tórax tênis ônibus lápis fênix )
+  
+  # Irregulares
+  inflect.irregular('tipo_ativo', 'tipos_ativo')
+  inflect.irregular('tipo_comodo', 'tipos_comodo')
+  inflect.irregular('finalizacao_chamado', 'finalizacoes_chamado')
+  inflect.irregular('modelo_contrato', 'modelos_contrato')
+  inflect.irregular('pessoa_fisica', 'pessoas_fisicas')
+  inflect.irregular('pessoa_juridica', 'pessoas_juridicas')
+  inflect.irregular('item_check_list', 'itens_check_list')
+  inflect.irregular('acontecimento_chamado', 'acontecimentos_chamado')
+  inflect.irregular('contrato_prestacao_servico', 'contratos_prestacao_servico')
+  inflect.irregular('venda_aluguel', 'vendas_alugueis')
+  inflect.irregular('lancamento_contabil', 'lancamentos_contabeis')
+  inflect.irregular('movimentacao_contabil', 'movimentacoes_contabeis')
+  inflect.irregular('plano_conta', 'planos_conta')
+  inflect.irregular('origem_conta', 'origens_conta')
+  inflect.irregular('conta_pagar_receber', 'contas_pagar_receber')
+  
+  
 end

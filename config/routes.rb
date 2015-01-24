@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :origens_conta
   resources :planos_conta
   resources :movimentacoes_contabil
-  resources :lancamentos_contabil
   resources :vistorias
   resources :chaves
   resources :chamados_reforma

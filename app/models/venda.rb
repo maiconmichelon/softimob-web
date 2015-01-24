@@ -1,3 +1,3 @@
-class Venda < ActiveRecord::Base
+class Venda < VendaAluguel
   belongs_to :proprietario
 end
