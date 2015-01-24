@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150118155403) do
+ActiveRecord::Schema.define(version: 20150124205716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,14 +20,16 @@ ActiveRecord::Schema.define(version: 20150118155403) do
     t.date     "data"
     t.integer  "funcionario_id"
     t.string   "descricao"
+    t.integer  "chamado_reforma_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "acontecimentos_chamado", ["chamado_reforma_id"], name: "index_acontecimentos_chamado_on_chamado_reforma_id", using: :btree
   add_index "acontecimentos_chamado", ["funcionario_id"], name: "index_acontecimentos_chamado_on_funcionario_id", using: :btree
 
   create_table "bairros", force: true do |t|
-    t.string   "nome"
+    t.string   "nome",         null: false
     t.integer  "municipio_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -61,7 +63,7 @@ ActiveRecord::Schema.define(version: 20150118155403) do
 
   create_table "check_lists", force: true do |t|
     t.string   "nome"
-    t.boolean  "ativo"
+    t.boolean  "ativo",      default: true
     t.integer  "empresa_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -69,36 +71,34 @@ ActiveRecord::Schema.define(version: 20150118155403) do
 
   add_index "check_lists", ["empresa_id"], name: "index_check_lists_on_empresa_id", using: :btree
 
-  create_table "clientes", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "comissionados", force: true do |t|
     t.string   "nome"
     t.string   "telefone"
     t.string   "celular"
     t.string   "email"
     t.date     "dataNascimento"
-    t.boolean  "ativo"
+    t.boolean  "ativo",             default: true, null: false
     t.integer  "endereco_id"
     t.integer  "empresa_id"
+    t.integer  "departamento_id"
+    t.date     "dataAdmissao"
+    t.string   "cpf"
+    t.string   "rg"
+    t.string   "filiacao"
+    t.integer  "estadoCivil"
+    t.string   "nacionalidade"
+    t.string   "cnpj"
+    t.string   "inscricaoEstadual"
+    t.integer  "pessoaFisica_id"
+    t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "comissionados", ["departamento_id"], name: "index_comissionados_on_departamento_id", using: :btree
   add_index "comissionados", ["empresa_id"], name: "index_comissionados_on_empresa_id", using: :btree
   add_index "comissionados", ["endereco_id"], name: "index_comissionados_on_endereco_id", using: :btree
-
-  create_table "comissoes", force: true do |t|
-    t.integer  "vendaAluguel_id"
-    t.integer  "comissionado_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "comissoes", ["comissionado_id"], name: "index_comissoes_on_comissionado_id", using: :btree
-  add_index "comissoes", ["vendaAluguel_id"], name: "index_comissoes_on_vendaAluguel_id", using: :btree
+  add_index "comissionados", ["pessoaFisica_id"], name: "index_comissionados_on_pessoaFisica_id", using: :btree
 
   create_table "comodos", force: true do |t|
     t.integer  "tipoComodo_id"
@@ -112,33 +112,16 @@ ActiveRecord::Schema.define(version: 20150118155403) do
   add_index "comodos", ["imovel_id"], name: "index_comodos_on_imovel_id", using: :btree
   add_index "comodos", ["tipoComodo_id"], name: "index_comodos_on_tipoComodo_id", using: :btree
 
-  create_table "contas_pagar_receber", force: true do |t|
-    t.decimal  "valor",                   precision: 12, scale: 2
-    t.decimal  "valorJurosDesconto",      precision: 12, scale: 2
-    t.date     "dataConta"
-    t.date     "dataVencimento"
-    t.date     "dataPagamento"
-    t.integer  "OrigemConta_id"
-    t.integer  "tipo"
-    t.integer  "movimentacaoContabil_id"
-    t.string   "observacoes"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "contas_pagar_receber", ["OrigemConta_id"], name: "index_contas_pagar_receber_on_OrigemConta_id", using: :btree
-  add_index "contas_pagar_receber", ["movimentacaoContabil_id"], name: "index_contas_pagar_receber_on_movimentacaoContabil_id", using: :btree
-
   create_table "contratos_prestacao_servico", force: true do |t|
     t.decimal  "valorImovel",       precision: 12, scale: 4
     t.integer  "tipo"
     t.integer  "imovel_id"
-    t.boolean  "divulgar"
+    t.boolean  "divulgar",                                   default: true
     t.date     "dataInicio"
     t.date     "dataVencimento"
     t.integer  "funcionario_id"
     t.integer  "cliente_id"
-    t.boolean  "resolvido"
+    t.boolean  "resolvido",                                  default: false
     t.date     "dataFechamento"
     t.integer  "modeloContrato_id"
     t.datetime "created_at"
@@ -152,7 +135,7 @@ ActiveRecord::Schema.define(version: 20150118155403) do
 
   create_table "departamentos", force: true do |t|
     t.string   "nome"
-    t.boolean  "ativo"
+    t.boolean  "ativo",      default: true, null: false
     t.integer  "empresa_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -181,8 +164,8 @@ ActiveRecord::Schema.define(version: 20150118155403) do
   add_index "enderecos", ["rua_id"], name: "index_enderecos_on_rua_id", using: :btree
 
   create_table "estados", force: true do |t|
-    t.string   "nome"
-    t.string   "uf"
+    t.string   "nome",       null: false
+    t.string   "uf",         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -203,29 +186,20 @@ ActiveRecord::Schema.define(version: 20150118155403) do
 
   create_table "finalizacoes_chamado_reforma", force: true do |t|
     t.date     "data"
-    t.integer  "funcionario_id"
+    t.integer  "responsavel_id"
     t.string   "descricaoConclusao"
     t.integer  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "finalizacoes_chamado_reforma", ["funcionario_id"], name: "index_finalizacoes_chamado_reforma_on_funcionario_id", using: :btree
-
-  create_table "funcionarios", force: true do |t|
-    t.integer  "departamento_id"
-    t.date     "dataAdmissao"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "funcionarios", ["departamento_id"], name: "index_funcionarios_on_departamento_id", using: :btree
+  add_index "finalizacoes_chamado_reforma", ["responsavel_id"], name: "index_finalizacoes_chamado_reforma_on_responsavel_id", using: :btree
 
   create_table "imoveis", force: true do |t|
-    t.boolean  "ativo"
-    t.integer  "metragem"
-    t.integer  "funcionario_id"
-    t.integer  "cliente_id"
+    t.boolean  "ativo",           default: true, null: false
+    t.integer  "metragem",                       null: false
+    t.integer  "angariador_id"
+    t.integer  "proprietario_id"
     t.integer  "tipoImovel_id"
     t.string   "observacoes"
     t.integer  "endereco_id"
@@ -234,83 +208,46 @@ ActiveRecord::Schema.define(version: 20150118155403) do
     t.datetime "updated_at"
   end
 
-  add_index "imoveis", ["cliente_id"], name: "index_imoveis_on_cliente_id", using: :btree
+  add_index "imoveis", ["angariador_id"], name: "index_imoveis_on_angariador_id", using: :btree
   add_index "imoveis", ["empresa_id"], name: "index_imoveis_on_empresa_id", using: :btree
   add_index "imoveis", ["endereco_id"], name: "index_imoveis_on_endereco_id", using: :btree
-  add_index "imoveis", ["funcionario_id"], name: "index_imoveis_on_funcionario_id", using: :btree
+  add_index "imoveis", ["proprietario_id"], name: "index_imoveis_on_proprietario_id", using: :btree
   add_index "imoveis", ["tipoImovel_id"], name: "index_imoveis_on_tipoImovel_id", using: :btree
-
-  create_table "indices", force: true do |t|
-    t.string   "nome"
-    t.boolean  "ativo"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "indices_mes", force: true do |t|
-    t.integer  "indice_id"
-    t.date     "data"
-    t.decimal  "porcentagem", precision: 4, scale: 2
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "indices_mes", ["indice_id"], name: "index_indices_mes_on_indice_id", using: :btree
 
   create_table "itens", force: true do |t|
     t.string   "nome"
-    t.boolean  "obrigatorio"
+    t.boolean  "obrigatorio",   default: true, null: false
+    t.integer  "check_list_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "itens", ["check_list_id"], name: "index_itens_on_check_list_id", using: :btree
 
   create_table "itens_check_list", force: true do |t|
     t.integer  "checkList_id"
     t.string   "nome"
     t.string   "valor"
-    t.boolean  "finalizado"
-    t.boolean  "obrigatorio"
+    t.boolean  "finalizado",   default: false
+    t.boolean  "obrigatorio",  default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "itens_check_list", ["checkList_id"], name: "index_itens_check_list_on_checkList_id", using: :btree
 
-  create_table "lancamentos_contabeis", force: true do |t|
-    t.integer  "tipo"
-    t.string   "historico"
-    t.decimal  "valor",                   precision: 14, scale: 2
-    t.integer  "planoConta_id"
-    t.integer  "movimentacaoContabil_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "lancamentos_contabeis", ["movimentacaoContabil_id"], name: "index_lancamentos_contabeis_on_movimentacaoContabil_id", using: :btree
-  add_index "lancamentos_contabeis", ["planoConta_id"], name: "index_lancamentos_contabeis_on_planoConta_id", using: :btree
-
   create_table "modelos_contrato", force: true do |t|
     t.string   "nome"
     t.integer  "empresa_id"
-    t.boolean  "ativo"
+    t.boolean  "ativo",      default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "modelos_contrato", ["empresa_id"], name: "index_modelos_contrato_on_empresa_id", using: :btree
 
-  create_table "movimentacoes_contabeis", force: true do |t|
-    t.decimal  "valor",      precision: 12, scale: 2
-    t.date     "data"
-    t.integer  "empresa_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "movimentacoes_contabeis", ["empresa_id"], name: "index_movimentacoes_contabeis_on_empresa_id", using: :btree
-
   create_table "municipios", force: true do |t|
-    t.string   "nome"
+    t.string   "nome",       null: false
     t.integer  "estado_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -318,43 +255,9 @@ ActiveRecord::Schema.define(version: 20150118155403) do
 
   add_index "municipios", ["estado_id"], name: "index_municipios_on_estado_id", using: :btree
 
-  create_table "origens_conta", force: true do |t|
-    t.string   "nome"
-    t.integer  "planoConta_id"
-    t.integer  "contaContraPartida_id"
-    t.boolean  "ativo"
-    t.integer  "empresa_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "origens_conta", ["contaContraPartida_id"], name: "index_origens_conta_on_contaContraPartida_id", using: :btree
-  add_index "origens_conta", ["empresa_id"], name: "index_origens_conta_on_empresa_id", using: :btree
-  add_index "origens_conta", ["planoConta_id"], name: "index_origens_conta_on_planoConta_id", using: :btree
-
-  create_table "pessoas_fisicas", force: true do |t|
-    t.string   "cpf"
-    t.string   "rg"
-    t.string   "filiacao"
-    t.integer  "estadoCivil"
-    t.string   "nacionalidade"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "pessoas_juridicas", force: true do |t|
-    t.string   "cnpj"
-    t.string   "inscricaoEstadual"
-    t.integer  "pessoaFisica_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "pessoas_juridicas", ["pessoaFisica_id"], name: "index_pessoas_juridicas_on_pessoaFisica_id", using: :btree
-
   create_table "placas", force: true do |t|
     t.string   "numero"
-    t.integer  "funcionario_id"
+    t.integer  "responsavel_id"
     t.integer  "empresa_id"
     t.integer  "imovel_id"
     t.datetime "created_at"
@@ -362,20 +265,8 @@ ActiveRecord::Schema.define(version: 20150118155403) do
   end
 
   add_index "placas", ["empresa_id"], name: "index_placas_on_empresa_id", using: :btree
-  add_index "placas", ["funcionario_id"], name: "index_placas_on_funcionario_id", using: :btree
   add_index "placas", ["imovel_id"], name: "index_placas_on_imovel_id", using: :btree
-
-  create_table "planos_conta", force: true do |t|
-    t.string   "codigo"
-    t.string   "nome"
-    t.integer  "tipo"
-    t.boolean  "ativo"
-    t.integer  "empresa_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "planos_conta", ["empresa_id"], name: "index_planos_conta_on_empresa_id", using: :btree
+  add_index "placas", ["responsavel_id"], name: "index_placas_on_responsavel_id", using: :btree
 
   create_table "proposta", force: true do |t|
     t.date     "data"
@@ -401,37 +292,27 @@ ActiveRecord::Schema.define(version: 20150118155403) do
     t.date     "dataReserva"
     t.date     "dataVencimento"
     t.integer  "cliente_id"
-    t.integer  "funcionario_id"
+    t.integer  "angariador_id"
     t.decimal  "valor",          precision: 12, scale: 2
     t.string   "observacoes"
     t.integer  "imovel_id"
-    t.boolean  "resolvido"
+    t.boolean  "resolvido",                               default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "reservas", ["angariador_id"], name: "index_reservas_on_angariador_id", using: :btree
   add_index "reservas", ["cliente_id"], name: "index_reservas_on_cliente_id", using: :btree
-  add_index "reservas", ["funcionario_id"], name: "index_reservas_on_funcionario_id", using: :btree
   add_index "reservas", ["imovel_id"], name: "index_reservas_on_imovel_id", using: :btree
 
   create_table "ruas", force: true do |t|
-    t.string   "nome"
+    t.string   "nome",       null: false
     t.integer  "bairro_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "ruas", ["bairro_id"], name: "index_ruas_on_bairro_id", using: :btree
-
-  create_table "tipos_ativo", force: true do |t|
-    t.string   "nome"
-    t.boolean  "ativo",      default: true, null: false
-    t.integer  "empresa_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "tipos_ativo", ["empresa_id"], name: "index_tipos_ativo_on_empresa_id", using: :btree
 
   create_table "tipos_comodo", force: true do |t|
     t.string   "nome"
@@ -442,6 +323,16 @@ ActiveRecord::Schema.define(version: 20150118155403) do
   end
 
   add_index "tipos_comodo", ["empresa_id"], name: "index_tipos_comodo_on_empresa_id", using: :btree
+
+  create_table "tipos_imovel", force: true do |t|
+    t.string   "nome"
+    t.boolean  "ativo",      default: true, null: false
+    t.integer  "empresa_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tipos_imovel", ["empresa_id"], name: "index_tipos_imovel_on_empresa_id", using: :btree
 
   create_table "tipos_imovel_tipos_comodo", force: true do |t|
     t.integer  "tipoImovel_id"
@@ -479,6 +370,14 @@ ActiveRecord::Schema.define(version: 20150118155403) do
   add_index "vendas_alugueis", ["modeloContrato_id"], name: "index_vendas_alugueis_on_modeloContrato_id", using: :btree
   add_index "vendas_alugueis", ["proprietario_id"], name: "index_vendas_alugueis_on_proprietario_id", using: :btree
 
+  create_table "vendas_alugueis_itens_check_list", force: true do |t|
+    t.integer "venda_aluguel_id"
+    t.integer "item_check_list_id"
+  end
+
+  add_index "vendas_alugueis_itens_check_list", ["item_check_list_id"], name: "index_vendas_alugueis_itens_check_list_on_item_check_list_id", using: :btree
+  add_index "vendas_alugueis_itens_check_list", ["venda_aluguel_id"], name: "index_vendas_alugueis_itens_check_list_on_venda_aluguel_id", using: :btree
+
   create_table "vistorias", force: true do |t|
     t.date     "data"
     t.integer  "funcionario_id"
@@ -490,5 +389,13 @@ ActiveRecord::Schema.define(version: 20150118155403) do
 
   add_index "vistorias", ["funcionario_id"], name: "index_vistorias_on_funcionario_id", using: :btree
   add_index "vistorias", ["vendaAluguel_id"], name: "index_vistorias_on_vendaAluguel_id", using: :btree
+
+  create_table "vistorias_itens_check_list", force: true do |t|
+    t.integer "vistoria_id"
+    t.integer "item_check_list_id"
+  end
+
+  add_index "vistorias_itens_check_list", ["item_check_list_id"], name: "index_vistorias_itens_check_list_on_item_check_list_id", using: :btree
+  add_index "vistorias_itens_check_list", ["vistoria_id"], name: "index_vistorias_itens_check_list_on_vistoria_id", using: :btree
 
 end

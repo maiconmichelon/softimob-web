@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
   
-  resources :comissoes
-  resources :contas_pagar_receber
-  resources :origens_conta
-  resources :planos_conta
-  resources :movimentacoes_contabil
   resources :vistorias
   resources :chaves
   resources :chamados_reforma
@@ -16,7 +11,6 @@ Rails.application.routes.draw do
   resources :pessoas_fisicas
   resources :modelos_contratos
   resources :itens
-  resources :indices
   resources :feedbacks
   resources :comodos
   resources :check_lists
@@ -32,6 +26,6 @@ Rails.application.routes.draw do
   resources :estados
   resources :departamentos
   resources :tipos_comodo
-  resources :tipos_ativo
+  resources :tipos_imovel
 
 end
