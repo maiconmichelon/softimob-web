@@ -4,6 +4,7 @@ class CreateChaves < ActiveRecord::Migration
       t.string :numero
       t.references :imovel, index: true, null: false
       t.integer :localizacao, null: false
+      t.boolean :ativo, null: false, default: true
 
       t.timestamps
     end

@@ -1,3 +1,3 @@
-class Funcionario < ActiveRecord::Base
+class Funcionario < Comissionado
   belongs_to :departamento
 end

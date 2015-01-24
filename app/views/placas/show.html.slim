@@ -1,7 +1,6 @@
 = show_for(@placa) do |s|
   = s.attribute :numero
-  = s.association :funcionario
-  = s.association :empresa
+  = s.association :responsavel
   = s.association :imovel
 
 = link_to 'Edit', edit_placa_path(@placa)

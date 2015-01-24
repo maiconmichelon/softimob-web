@@ -3,7 +3,7 @@ class CreateCheckLists < ActiveRecord::Migration
     create_table :check_lists do |t|
       t.string :nome
       t.boolean :ativo, null: false, default: true
-      t.references :empresa, index: true, null: false
+      t.references :empresa, default: 1 , index: true, null: false
 
       t.timestamps
     end

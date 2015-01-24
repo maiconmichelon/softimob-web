@@ -1,16 +1,14 @@
-h1 Listing imovels
+h1 Listing imoveis
 
 table
   thead
     tr
-      th Ativo
       th Metragem
-      th Funcionario
-      th Cliente
+      th Angariador
+      th Proprietário
       th Tipoimovel
       th Observacoes
       th Endereco
-      th Empresa
       th
       th
       th
@@ -18,14 +16,12 @@ table
   tbody
     - @imoveis.each do |imovel|
       tr
-        td = imovel.ativo
         td = imovel.metragem
-        td = imovel.funcionario
-        td = imovel.cliente
+        td = imovel.angariador
+        td = imovel.proprietario
         td = imovel.tipoImovel
         td = imovel.observacoes
         td = imovel.endereco
-        td = imovel.empresa
         td = link_to 'Show', imovel
         td = link_to 'Edit', edit_imovel_path(imovel)
         td = link_to 'Destroy', imovel, data: {:confirm => 'Are you sure?'}, :method => :delete

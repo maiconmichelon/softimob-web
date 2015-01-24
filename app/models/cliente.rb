@@ -1,2 +1,2 @@
-class Cliente < ActiveRecord::Base
+class Cliente < Comissionado
 end

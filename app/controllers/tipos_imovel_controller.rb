@@ -1,47 +1,47 @@
-class TiposAtivosController < ApplicationController
-  before_action :set_tipo_ativo, only: [:show, :edit, :update, :destroy]
+class TiposImovelController < ApplicationController
+  before_action :set_tipo_imovel, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
 
   def index
-    @tipos_ativos = TipoAtivo.all
-    respond_with(@tipos_ativos)
+    @tipos_imovel = TipoImovel.all
+    respond_with(@tipos_imovel)
   end
 
   def show
-    respond_with(@tipo_ativo)
+    respond_with(@tipo_imovel)
   end
 
   def new
-    @tipo_ativo = TipoAtivo.new
-    respond_with(@tipo_ativo)
+    @tipo_imovel = TipoImovel.new
+    respond_with(@tipo_imovel)
   end
 
   def edit
   end
 
   def create
-    @tipo_ativo = TipoAtivo.new(tipo_ativo_params)
-    @tipo_ativo.save
-    respond_with(@tipo_ativo)
+    @tipo_imovel = TipoImovel.new(tipo_imovel_params)
+    @tipo_imovel.save
+    respond_with(@tipo_imovel)
   end
 
   def update
-    @tipo_ativo.update(tipo_ativo_params)
-    respond_with(@tipo_ativo)
+    @tipo_imovel.update(tipo_imovel_params)
+    respond_with(@tipo_imovel)
   end
 
   def destroy
-    @tipo_ativo.destroy
-    respond_with(@tipo_ativo)
+    @tipo_imovel.destroy
+    respond_with(@tipo_imovel)
   end
 
   private
-    def set_tipo_ativo
-      @tipo_ativo = TipoAtivo.find(params[:id])
+    def set_tipo_imovel
+      @tipo_imovel = TipoImovel.find(params[:id])
     end
 
-    def tipo_ativo_params
-      params.require(:tipo_ativo).permit(:nome, :ativo)
+    def tipo_imovel_params
+      params.require(:tipo_imovel).permit(:nome, :ativo)
     end
 end

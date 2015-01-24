@@ -8,7 +8,7 @@ class CreateComissionados < ActiveRecord::Migration
       t.date :dataNascimento
       t.boolean :ativo, default: true, null: false
       t.references :endereco, index: true, null: false
-      t.references :empresa, index: true, null: false
+      t.references :empresa, default: 1 , index: true, null: false
       
       # Funcionário
       t.references :departamento, index: true

@@ -8,7 +8,7 @@ class CreateImoveis < ActiveRecord::Migration
       t.references :tipoImovel, index: true, null: false
       t.string :observacoes
       t.references :endereco, index: true, null: false
-      t.references :empresa, index: true, null: false
+      t.references :empresa, default: 1 , index: true, null: false
 
       t.timestamps
     end

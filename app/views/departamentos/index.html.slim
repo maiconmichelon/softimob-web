@@ -4,8 +4,6 @@ table
   thead
     tr
       th Nome
-      th Ativo
-      th Empresa
       th
       th
       th
@@ -14,8 +12,6 @@ table
     - @departamentos.each do |departamento|
       tr
         td = departamento.nome
-        td = departamento.ativo
-        td = departamento.empresa
         td = link_to 'Show', departamento
         td = link_to 'Edit', edit_departamento_path(departamento)
         td = link_to 'Destroy', departamento, data: {:confirm => 'Are you sure?'}, :method => :delete

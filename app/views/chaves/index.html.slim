@@ -11,15 +11,15 @@ table
       th
 
   tbody
-    - @chaves.each do |chafe|
+    - @chaves.each do |chave|
       tr
-        td = chafe.numero
-        td = chafe.imovel
-        td = chafe.localizacao
-        td = link_to 'Show', chafe
-        td = link_to 'Edit', edit_chafe_path(chafe)
-        td = link_to 'Destroy', chafe, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = chave.numero
+        td = chave.imovel
+        td = chave.localizacao
+        td = link_to 'Show', chave
+        td = link_to 'Edit', edit_chave_path(chave)
+        td = link_to 'Destroy', chave, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 
-= link_to 'New Chave', new_chafe_path
+= link_to 'New Chave', new_chave_path

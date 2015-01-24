@@ -1,6 +1,6 @@
 ActiveSupport::Inflector.inflections(:en) do |inflect|
    inflect.clear
- 
+
   inflect.plural(/$/, 's')
   inflect.plural(/(s)$/i, '\1')
   inflect.plural(/^(paí)s$/i, '\1ses')
@@ -16,7 +16,7 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.plural(/ão$/i, 'ões')
   inflect.plural(/^(irm|m)ão$/i, '\1ãos')
   inflect.plural(/^(alem|c|p)ão$/i, '\1ães')
- 
+
   # Sem acentos...
   inflect.plural(/ao$/i, 'oes')
   inflect.plural(/^(irm|m)ao$/i, '\1aos')
@@ -44,9 +44,9 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
 
   # Incontáveis
   inflect.uncountable %w( tórax tênis ônibus lápis fênix )
-  
+
   # Irregulares
-  inflect.irregular('tipo_ativo', 'tipos_ativo')
+  inflect.irregular('tipo_imovel', 'tipos_imovel')
   inflect.irregular('tipo_comodo', 'tipos_comodo')
   inflect.irregular('finalizacao_chamado', 'finalizacoes_chamado')
   inflect.irregular('modelo_contrato', 'modelos_contrato')
@@ -61,6 +61,6 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.irregular('plano_conta', 'planos_conta')
   inflect.irregular('origem_conta', 'origens_conta')
   inflect.irregular('conta_pagar_receber', 'contas_pagar_receber')
-  
-  
+
+
 end

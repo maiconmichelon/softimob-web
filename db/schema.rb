@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20150124205716) do
   create_table "check_lists", force: true do |t|
     t.string   "nome"
     t.boolean  "ativo",      default: true, null: false
-    t.integer  "empresa_id",                null: false
+    t.integer  "empresa_id", default: 1,    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 20150124205716) do
     t.date     "dataNascimento"
     t.boolean  "ativo",             default: true, null: false
     t.integer  "endereco_id",                      null: false
-    t.integer  "empresa_id",                       null: false
+    t.integer  "empresa_id",        default: 1,    null: false
     t.integer  "departamento_id"
     t.date     "dataAdmissao"
     t.string   "cpf"
@@ -136,7 +136,7 @@ ActiveRecord::Schema.define(version: 20150124205716) do
   create_table "departamentos", force: true do |t|
     t.string   "nome"
     t.boolean  "ativo",      default: true, null: false
-    t.integer  "empresa_id",                null: false
+    t.integer  "empresa_id", default: 1,    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -203,7 +203,7 @@ ActiveRecord::Schema.define(version: 20150124205716) do
     t.integer  "tipoImovel_id",                  null: false
     t.string   "observacoes"
     t.integer  "endereco_id",                    null: false
-    t.integer  "empresa_id",                     null: false
+    t.integer  "empresa_id",      default: 1,    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -238,7 +238,7 @@ ActiveRecord::Schema.define(version: 20150124205716) do
 
   create_table "modelos_contrato", force: true do |t|
     t.string   "nome"
-    t.integer  "empresa_id"
+    t.integer  "empresa_id", default: 1
     t.boolean  "ativo",      default: true, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -258,7 +258,7 @@ ActiveRecord::Schema.define(version: 20150124205716) do
   create_table "placas", force: true do |t|
     t.string   "numero"
     t.integer  "responsavel_id"
-    t.integer  "empresa_id",     null: false
+    t.integer  "empresa_id",     default: 1, null: false
     t.integer  "imovel_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -317,7 +317,7 @@ ActiveRecord::Schema.define(version: 20150124205716) do
   create_table "tipos_comodo", force: true do |t|
     t.string   "nome"
     t.boolean  "ativo",      default: true, null: false
-    t.integer  "empresa_id",                null: false
+    t.integer  "empresa_id", default: 1,    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -327,7 +327,7 @@ ActiveRecord::Schema.define(version: 20150124205716) do
   create_table "tipos_imovel", force: true do |t|
     t.string   "nome"
     t.boolean  "ativo",      default: true, null: false
-    t.integer  "empresa_id",                null: false
+    t.integer  "empresa_id", default: 1,    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

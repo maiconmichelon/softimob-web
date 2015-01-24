@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   resources :vistorias
   resources :chaves
   resources :chamados_reforma
@@ -9,10 +9,8 @@ Rails.application.routes.draw do
   resources :propostas
   resources :pessoas_juridicas
   resources :pessoas_fisicas
-  resources :modelos_contratos
-  resources :itens
+  resources :modelos_contrato
   resources :feedbacks
-  resources :comodos
   resources :check_lists
   resources :reservas
   resources :placas

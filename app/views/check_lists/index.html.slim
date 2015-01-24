@@ -4,8 +4,6 @@ table
   thead
     tr
       th Nome
-      th Ativo
-      th Empresa
       th
       th
       th
@@ -14,8 +12,6 @@ table
     - @check_lists.each do |check_list|
       tr
         td = check_list.nome
-        td = check_list.ativo
-        td = check_list.empresa
         td = link_to 'Show', check_list
         td = link_to 'Edit', edit_check_list_path(check_list)
         td = link_to 'Destroy', check_list, data: {:confirm => 'Are you sure?'}, :method => :delete

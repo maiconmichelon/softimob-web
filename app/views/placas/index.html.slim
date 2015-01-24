@@ -4,8 +4,7 @@ table
   thead
     tr
       th Numero
-      th Funcionario
-      th Empresa
+      th Responsável
       th Imovel
       th
       th
@@ -15,8 +14,7 @@ table
     - @placas.each do |placa|
       tr
         td = placa.numero
-        td = placa.funcionario
-        td = placa.empresa
+        td = placa.responsavel
         td = placa.imovel
         td = link_to 'Show', placa
         td = link_to 'Edit', edit_placa_path(placa)

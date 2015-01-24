@@ -1,5 +1,5 @@
 class ChavesController < ApplicationController
-  before_action :set_chafe, only: [:show, :edit, :update, :destroy]
+  before_action :set_chave, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
 
@@ -9,39 +9,39 @@ class ChavesController < ApplicationController
   end
 
   def show
-    respond_with(@chafe)
+    respond_with(@chave)
   end
 
   def new
-    @chafe = Chave.new
-    respond_with(@chafe)
+    @chave = Chave.new
+    respond_with(@chave)
   end
 
   def edit
   end
 
   def create
-    @chafe = Chave.new(chave_params)
-    @chafe.save
-    respond_with(@chafe)
+    @chave = Chave.new(chave_params)
+    @chave.save
+    respond_with(@chave)
   end
 
   def update
-    @chafe.update(chave_params)
-    respond_with(@chafe)
+    @chave.update(chave_params)
+    respond_with(@chave)
   end
 
   def destroy
-    @chafe.destroy
-    respond_with(@chafe)
+    @chave.destroy
+    respond_with(@chave)
   end
 
   private
-    def set_chafe
-      @chafe = Chave.find(params[:id])
+    def set_chave
+      @chave = Chave.find(params[:id])
     end
 
-    def chafe_params
-      params.require(:chafe).permit(:numero, :imovel_id, :localizacao)
+    def chave_params
+      params.require(:chave).permit(:numero, :imovel_id, :localizacao)
     end
 end
