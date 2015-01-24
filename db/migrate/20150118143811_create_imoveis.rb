@@ -4,11 +4,11 @@ class CreateImoveis < ActiveRecord::Migration
       t.boolean :ativo, null: false, default: true
       t.integer :metragem, null: false
       t.references :angariador, index: true
-      t.references :proprietario, index: true, required: true
-      t.references :tipoImovel, index: true, required: true
+      t.references :proprietario, index: true, null: false
+      t.references :tipoImovel, index: true, null: false
       t.string :observacoes
-      t.references :endereco, index: true, required: true
-      t.references :empresa, index: true, required: true
+      t.references :endereco, index: true, null: false
+      t.references :empresa, index: true, null: false
 
       t.timestamps
     end

@@ -3,7 +3,7 @@ class CreateModelosContrato < ActiveRecord::Migration
     create_table :modelos_contrato do |t|
       t.string :nome
       t.references :empresa, index: true
-      t.boolean :ativo, required: true, default: true
+      t.boolean :ativo, null: false, default: true
 
       t.timestamps
     end

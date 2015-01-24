@@ -1,10 +1,10 @@
 class CreateComodos < ActiveRecord::Migration
   def change
     create_table :comodos do |t|
-      t.references :tipoComodo, index: true, required: true
-      t.integer :quantidade, required: true
+      t.references :tipoComodo, index: true, null: false
+      t.integer :quantidade, null: false
       t.string :descricao
-      t.references :imovel, index: true, required: true
+      t.references :imovel, index: true, null: false
 
       t.timestamps
     end
