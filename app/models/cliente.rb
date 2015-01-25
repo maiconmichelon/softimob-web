@@ -1,2 +1,3 @@
 class Cliente < Comissionado
+
 end

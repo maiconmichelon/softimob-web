@@ -2,11 +2,18 @@
   = f.error_notification
 
   .form-inputs
+    = f.input :nome
+    = f.input :telefone
+    = f.input :celular
+    = f.input :email
+    = f.input :dataNascimento
     = f.input :cpf
     = f.input :rg
     = f.input :filiacao
     = f.input :estadoCivil
     = f.input :nacionalidade
+    = f.simple_fields_for :endereco do |fe|
+      = render 'enderecos/form', f: fe
 
   .form-actions
     = f.button :submit

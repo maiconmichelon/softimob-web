@@ -3,6 +3,12 @@ h1 Listing pessoa_fisicas
 table
   thead
     tr
+      th Nome
+      th Telefone
+      th Celular
+      th Email
+      th Datanascimento
+      th Endereco
       th Cpf
       th Rg
       th Filiacao
@@ -15,6 +21,12 @@ table
   tbody
     - @pessoa_fisicas.each do |pessoa_fisica|
       tr
+        td = pessoa_fisica.nome
+        td = pessoa_fisica.telefone
+        td = pessoa_fisica.celular
+        td = pessoa_fisica.email
+        td = pessoa_fisica.dataNascimento
+        td = pessoa_fisica.endereco
         td = pessoa_fisica.cpf
         td = pessoa_fisica.rg
         td = pessoa_fisica.filiacao

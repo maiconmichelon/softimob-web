@@ -53,8 +53,9 @@ ActiveRecord::Schema.define(version: 20150124205716) do
 
   create_table "chaves", force: true do |t|
     t.string   "numero"
-    t.integer  "imovel_id",   null: false
-    t.integer  "localizacao", null: false
+    t.integer  "imovel_id",                  null: false
+    t.integer  "localizacao",                null: false
+    t.boolean  "ativo",       default: true, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -225,16 +226,12 @@ ActiveRecord::Schema.define(version: 20150124205716) do
   add_index "itens", ["check_list_id"], name: "index_itens_on_check_list_id", using: :btree
 
   create_table "itens_check_list", force: true do |t|
-    t.integer  "checkList_id",                 null: false
-    t.string   "nome"
-    t.string   "valor",                        null: false
-    t.boolean  "finalizado",   default: false, null: false
-    t.boolean  "obrigatorio",  default: true,  null: false
+    t.string   "nome",                       null: false
+    t.string   "valor",                      null: false
+    t.boolean  "finalizado", default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "itens_check_list", ["checkList_id"], name: "index_itens_check_list_on_checkList_id", using: :btree
 
   create_table "modelos_contrato", force: true do |t|
     t.string   "nome"
@@ -258,8 +255,9 @@ ActiveRecord::Schema.define(version: 20150124205716) do
   create_table "placas", force: true do |t|
     t.string   "numero"
     t.integer  "responsavel_id"
-    t.integer  "empresa_id",     default: 1, null: false
+    t.integer  "empresa_id",     default: 1,    null: false
     t.integer  "imovel_id"
+    t.boolean  "ativo",          default: true, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -3,6 +3,12 @@ h1 Listing pessoa_juridicas
 table
   thead
     tr
+      th Nome
+      th Telefone
+      th Celular
+      th Email
+      th Datanascimento
+      th Endereco
       th Cnpj
       th Inscricaoestadual
       th Pessoafisica
@@ -13,6 +19,12 @@ table
   tbody
     - @pessoa_juridicas.each do |pessoa_juridica|
       tr
+        td = pessoa_juridica.nome
+        td = pessoa_juridica.telefone
+        td = pessoa_juridica.celular
+        td = pessoa_juridica.email
+        td = pessoa_juridica.dataNascimento
+        td = pessoa_juridica.endereco
         td = pessoa_juridica.cnpj
         td = pessoa_juridica.inscricaoEstadual
         td = pessoa_juridica.pessoaFisica

@@ -3,6 +3,12 @@ h1 Listing funcionarios
 table
   thead
     tr
+      th Nome
+      th Telefone
+      th Celular
+      th Email
+      th Datanascimento
+      th Endereco
       th Departamento
       th Dataadmissao
       th
@@ -12,6 +18,12 @@ table
   tbody
     - @funcionarios.each do |funcionario|
       tr
+        td = funcionario.nome
+        td = funcionario.telefone
+        td = funcionario.celular
+        td = funcionario.email
+        td = funcionario.dataNascimento
+        td = funcionario.endereco
         td = funcionario.departamento
         td = funcionario.dataAdmissao
         td = link_to 'Show', funcionario

@@ -1,4 +1,10 @@
 = show_for(@funcionario) do |s|
+  = s.attribute :nome
+  = s.attribute :telefone
+  = s.attribute :celular
+  = s.attribute :email
+  = s.attribute :dataNascimento
+  = s.association :endereco
   = s.association :departamento
   = s.attribute :dataAdmissao
 

@@ -4,4 +4,9 @@ class Imovel < ActiveRecord::Base
   belongs_to :tipoImovel
   belongs_to :endereco
   belongs_to :empresa
+
+  def initialize
+    endereco = Endereco.new
+  end
+  
 end

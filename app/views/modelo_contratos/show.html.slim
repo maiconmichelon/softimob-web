@@ -1,8 +1,0 @@
-= show_for(@modelo_contrato) do |s|
-  = s.attribute :nome
-  = s.association :empresa
-  = s.attribute :ativo
-
-= link_to 'Edit', edit_modelo_contrato_path(@modelo_contrato)
-|
-= link_to 'Back', modelo_contratos_path

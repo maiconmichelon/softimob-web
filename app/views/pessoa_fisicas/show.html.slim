@@ -1,4 +1,10 @@
 = show_for(@pessoa_fisica) do |s|
+  = s.attribute :nome
+  = s.attribute :telefone
+  = s.attribute :celular
+  = s.attribute :email
+  = s.attribute :dataNascimento
+  = s.association :endereco
   = s.attribute :cpf
   = s.attribute :rg
   = s.attribute :filiacao
