@@ -1,4 +1,5 @@
 class Aluguel < VendaAluguel
   belongs_to :cliente
-  belongs_to :indice
+  
+  validates :dataVencimento, presence: true
 end

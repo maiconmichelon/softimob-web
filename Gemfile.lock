@@ -46,7 +46,11 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     daemons (1.1.9)
+    date_validator (0.7.1)
+      activemodel
     debug_inspector (0.0.2)
+    email_validator (1.5.0)
+      activemodel
     erubis (2.7.0)
     eventmachine (1.0.4)
     execjs (2.2.2)
@@ -167,6 +171,8 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass
+  date_validator
+  email_validator
   high_voltage
   jquery-rails
   pg

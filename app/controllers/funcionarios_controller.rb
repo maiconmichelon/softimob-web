@@ -42,6 +42,6 @@ class FuncionariosController < ApplicationController
     end
 
     def funcionario_params
-      params.require(:funcionario).permit(:departamento_id, :dataAdmissao)
+      params.require(:funcionario).permit(:departamento_id, :dataAdmissao, :nome, :telefone, :celular, :email, :dataNascimento, :endereco_id, endereco_attributes: [:cep, :rua_id, :complemento, :numero, :id]);
     end
 end

@@ -42,6 +42,6 @@ class PessoasJuridicasController < ApplicationController
     end
 
     def pessoa_juridica_params
-      params.require(:pessoa_juridica).permit(:cnpj, :inscricaoEstadual, :pessoaFisica_id)
+      params.require(:pessoa_juridica).permit(:cnpj, :inscricaoEstadual, :pessoaFisica_id, :nome, :telefone, :celular, :email, :dataNascimento, :endereco_id, endereco_attributes: [:cep, :rua_id, :complemento, :numero, :id]);
     end
 end

@@ -6,6 +6,10 @@ class Comissionado < ActiveRecord::Base
   
   accepts_nested_attributes_for :endereco
 
+  validates :nome, presence: true
+  validates :email, :email => true
+  validates :telefone, length: { is: 10 }
+  
   def to_s
     nome
   end

@@ -28,3 +28,5 @@ group :production do
 end
 gem 'responders'
 gem 'show_for'
+gem 'email_validator'
+gem 'date_validator'

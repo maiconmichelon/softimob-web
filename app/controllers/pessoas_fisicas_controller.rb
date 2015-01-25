@@ -42,6 +42,6 @@ class PessoasFisicasController < ApplicationController
     end
 
     def pessoa_fisica_params
-      params.require(:pessoa_fisica).permit(:cpf, :rg, :filiacao, :estadoCivil, :nacionalidade)
+      params.require(:pessoa_fisica).permit(:cpf, :rg, :filiacao, :estadoCivil, :nacionalidade, :nome, :telefone, :celular, :email, :dataNascimento, :endereco_id, endereco_attributes: [:cep, :rua_id, :complemento, :numero, :id]);
     end
 end
