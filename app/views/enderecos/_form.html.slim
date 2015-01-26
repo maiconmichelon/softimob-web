@@ -1,4 +1,7 @@
   = f.input :cep
-  = f.association :rua
+  = f.input :estado_id, :collection => Estado.all, :selected => f.object.estado_id, :input_html => { :class => 'estado' }
+  = f.input :municipio_id, :collection => Municipio.all, :selected => f.object.municipio_id, :input_html => { :class => 'municipio' }
+  = f.input :bairro_id, :collection => Bairro.all, :selected => f.object.bairro_id, :input_html => { :class => 'bairro' }
+  = f.association :rua, :input_html => { :class => 'rua' }
   = f.input :numero
   = f.input :complemento
