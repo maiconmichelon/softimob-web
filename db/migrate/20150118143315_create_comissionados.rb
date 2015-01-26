@@ -9,23 +9,23 @@ class CreateComissionados < ActiveRecord::Migration
       t.boolean :ativo, default: true, null: false
       t.references :endereco, index: true, null: false
       t.references :empresa, default: 1 , index: true, null: false
-      
+
       # Funcionário
       t.references :departamento, index: true
       t.date :dataAdmissao
-      
+
       # Pessoa Física
       t.string :cpf
       t.string :rg
       t.string :filiacao
       t.integer :estadoCivil
       t.string :nacionalidade
-      
+
       # Pessoa Jurídica
       t.string :cnpj
       t.string :inscricaoEstadual
-      t.references :pessoaFisica, index: true
-      
+      t.references :socioProprietario, index: true
+
       t.string :type
 
       t.timestamps

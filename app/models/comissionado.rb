@@ -3,13 +3,13 @@ class Comissionado < ActiveRecord::Base
 
   belongs_to :endereco
   belongs_to :empresa
-  
+
   accepts_nested_attributes_for :endereco
 
-  validates :nome, presence: true
+  validates :nome, :telefone, :email, presence: true
   validates :email, :email => true
   validates :telefone, length: { is: 10 }
-  
+
   def to_s
     nome
   end
@@ -18,7 +18,6 @@ class Comissionado < ActiveRecord::Base
 
   def instanciar_endereco
     self.endereco ||= Endereco.new
-    self.nome ||= '999'
   end
 
 end

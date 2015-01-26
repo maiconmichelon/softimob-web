@@ -78,9 +78,9 @@ ActiveRecord::Schema.define(version: 20150124205716) do
     t.string   "celular"
     t.string   "email"
     t.date     "dataNascimento"
-    t.boolean  "ativo",             default: true, null: false
-    t.integer  "endereco_id",                      null: false
-    t.integer  "empresa_id",        default: 1,    null: false
+    t.boolean  "ativo",                default: true, null: false
+    t.integer  "endereco_id",                         null: false
+    t.integer  "empresa_id",           default: 1,    null: false
     t.integer  "departamento_id"
     t.date     "dataAdmissao"
     t.string   "cpf"
@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 20150124205716) do
     t.string   "nacionalidade"
     t.string   "cnpj"
     t.string   "inscricaoEstadual"
-    t.integer  "pessoaFisica_id"
+    t.integer  "socioProprietario_id"
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 20150124205716) do
   add_index "comissionados", ["departamento_id"], name: "index_comissionados_on_departamento_id", using: :btree
   add_index "comissionados", ["empresa_id"], name: "index_comissionados_on_empresa_id", using: :btree
   add_index "comissionados", ["endereco_id"], name: "index_comissionados_on_endereco_id", using: :btree
-  add_index "comissionados", ["pessoaFisica_id"], name: "index_comissionados_on_pessoaFisica_id", using: :btree
+  add_index "comissionados", ["socioProprietario_id"], name: "index_comissionados_on_socioProprietario_id", using: :btree
 
   create_table "comodos", force: true do |t|
     t.integer  "tipoComodo_id", null: false
@@ -145,7 +145,7 @@ ActiveRecord::Schema.define(version: 20150124205716) do
   add_index "departamentos", ["empresa_id"], name: "index_departamentos_on_empresa_id", using: :btree
 
   create_table "empresas", force: true do |t|
-    t.string   "nome"
+    t.string   "razaoSocial"
     t.string   "cnpj"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -165,11 +165,14 @@ ActiveRecord::Schema.define(version: 20150124205716) do
   add_index "enderecos", ["rua_id"], name: "index_enderecos_on_rua_id", using: :btree
 
   create_table "estados", force: true do |t|
-    t.string   "nome",       null: false
-    t.string   "uf",         null: false
+    t.string   "nome",                   null: false
+    t.string   "uf",                     null: false
+    t.integer  "empresa_id", default: 1, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "estados", ["empresa_id"], name: "index_estados_on_empresa_id", using: :btree
 
   create_table "feedbacks", force: true do |t|
     t.date     "data",           null: false

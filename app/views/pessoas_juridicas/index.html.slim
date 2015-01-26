@@ -1,4 +1,4 @@
-h1 Listing pessoa_juridicas
+h1 Listing pessoas_juridicas
 
 table
   thead
@@ -17,7 +17,7 @@ table
       th
 
   tbody
-    - @pessoa_juridicas.each do |pessoa_juridica|
+    - @pessoas_juridicas.each do |pessoa_juridica|
       tr
         td = pessoa_juridica.nome
         td = pessoa_juridica.telefone
