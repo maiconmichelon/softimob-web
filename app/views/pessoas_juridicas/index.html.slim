@@ -11,7 +11,7 @@ table
       th Endereco
       th Cnpj
       th Inscricaoestadual
-      th Pessoafisica
+      th SocioProprietario
       th
       th
       th
@@ -27,7 +27,7 @@ table
         td = pessoa_juridica.endereco
         td = pessoa_juridica.cnpj
         td = pessoa_juridica.inscricaoEstadual
-        td = pessoa_juridica.pessoaFisica
+        td = pessoa_juridica.socioProprietario
         td = link_to 'Show', pessoa_juridica
         td = link_to 'Edit', edit_pessoa_juridica_path(pessoa_juridica)
         td = link_to 'Destroy', pessoa_juridica, data: {:confirm => 'Are you sure?'}, :method => :delete

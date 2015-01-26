@@ -9,7 +9,7 @@
     = f.input :dataNascimento
     = f.input :cnpj
     = f.input :inscricaoEstadual
-    = f.association :pessoaFisica
+    = f.association :socioProprietario
     = f.simple_fields_for :endereco do |fe|
       = render 'enderecos/form', f: fe
 
