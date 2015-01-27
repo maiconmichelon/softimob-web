@@ -1,7 +1,7 @@
 class BairrosController < ApplicationController
   before_action :set_bairro, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html, :json
 
   def index
     @bairros = Bairro.all
@@ -12,6 +12,11 @@ class BairrosController < ApplicationController
     respond_with(@bairro)
   end
 
+  def bairros_by_municipio
+    @bairros = Bairro.find_by municipio_id: params[:municipio_id]
+    respond_with(@bairros)
+  end
+  
   def new
     @bairro = Bairro.new
     respond_with(@bairro)

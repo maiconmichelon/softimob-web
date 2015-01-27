@@ -1,7 +1,7 @@
 class MunicipiosController < ApplicationController
   before_action :set_municipio, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html, :json
 
   def index
     @municipios = Municipio.all
@@ -15,6 +15,11 @@ class MunicipiosController < ApplicationController
   def new
     @municipio = Municipio.new
     respond_with(@municipio)
+  end
+  
+  def municipios_by_estado
+    @municipios = Municipio.find_by estado_id: params[:estado_id]
+    respond_with(@municipios)
   end
 
   def edit

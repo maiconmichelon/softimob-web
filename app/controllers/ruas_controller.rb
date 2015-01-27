@@ -1,7 +1,7 @@
 class RuasController < ApplicationController
   before_action :set_rua, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html, :json
 
   def index
     @ruas = Rua.all
@@ -20,6 +20,11 @@ class RuasController < ApplicationController
   def edit
   end
 
+  def ruas_by_bairro
+    @ruas = Rua.find_by bairro_id: params[:bairro_id]
+    respond_with(@ruas)
+  end
+  
   def create
     @rua = Rua.new(rua_params)
     @rua.save
