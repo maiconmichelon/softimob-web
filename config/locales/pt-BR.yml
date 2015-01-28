@@ -1,0 +1,99 @@
+pt-BR:
+
+  application_name: Controle de Ativos
+
+  link:
+    back: Voltar
+
+  layout:
+    people: Pessoas
+    fixtures: Ativos
+    components: Componentes
+    groups: Grupos
+    providers: Fornecedores
+    types: Tipos de Ativo
+    maintenances: Manutenções
+    budgets: Orçamentos
+
+  activerecord:
+    models:
+      type: Tipo
+      fixture: Ativo
+      person: Pessoa
+      component: Componente
+      group: Grupo
+      provider: Fornecedor
+      type: Tipo de Ativos
+      maintenance: Manutenção
+      budget: Orçamento
+
+    attributes:
+      type:
+        description: Descrição
+        initial_code: Código inicial
+      fixture:
+        number: Número
+        warranty: Garantia
+        provider: Fornecedor
+        acquisition: Aquisição
+        type: Tipo
+        person: Pessoa
+        purchaseValue: Valor
+      person:
+        name: Nome
+        group: Grupo
+      component:
+        name: Nome
+      group:
+        name: Nome
+      provider:
+        name: Nome
+        cpfCnpj: Cpf/Cnpj
+        phone: Telefone
+        localization: Localização
+      budget:
+        description: Descrição
+        date: Data
+        value: Valor
+        person: Pessoa
+        fixture: Ativo
+        provider: Fornecedor
+      maintenance:
+        description: Descrição
+        date: Data
+        value: Valor
+      component_fixture:
+        component: Componente
+        quantity: Quantidade
+        description: Descrição
+      budget_maintenance:
+        budget: Orçamento
+
+  helpers:
+    actions: "Ações"
+    links:
+      back: "Voltar"
+      cancel: "Cancelar"
+      confirm: "Você tem certeza?"
+      destroy: "Apagar"
+      new: "Novo"
+      edit: "Editar"
+      add: "Adicionar"
+    titles:
+      edit: "Editar %{model}"
+      save: "Salvar %{model}"
+      new: "Novo %{model}"
+      delete: "Apagar %{model}"
+      add: "Adicionar %{model}"
+      show: "%{model}"
+
+  dialogs:
+    destroy: 'Você tem certeza que quer remover?'
+
+  date:
+    datepicker:
+      default: "dd/mm/yyyy"
+      long: "dd MM, yyyy"
+    formats:
+      default: "dd/mm/yyyy"
+      long: ! '%B %d, %Y'
