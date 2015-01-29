@@ -13,10 +13,10 @@ class BairrosController < ApplicationController
   end
 
   def bairros_by_municipio
-    @bairros = Bairro.find_by municipio_id: params[:municipio_id]
+    @bairros = Bairro.where municipio_id: params[:municipio_id]
     respond_with(@bairros)
   end
-  
+
   def new
     @bairro = Bairro.new
     respond_with(@bairro)

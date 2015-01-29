@@ -21,10 +21,10 @@ class RuasController < ApplicationController
   end
 
   def ruas_by_bairro
-    @ruas = Rua.find_by bairro_id: params[:bairro_id]
+    @ruas = Rua.where bairro_id: params[:bairro_id]
     respond_with(@ruas)
   end
-  
+
   def create
     @rua = Rua.new(rua_params)
     @rua.save

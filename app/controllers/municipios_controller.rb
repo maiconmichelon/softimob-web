@@ -16,9 +16,9 @@ class MunicipiosController < ApplicationController
     @municipio = Municipio.new
     respond_with(@municipio)
   end
-  
+
   def municipios_by_estado
-    @municipios = Municipio.find_by estado_id: params[:estado_id]
+    @municipios = Municipio.where estado_id: params[:estado_id]
     respond_with(@municipios)
   end
 

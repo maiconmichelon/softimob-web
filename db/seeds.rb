@@ -7,10 +7,22 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 empresa = Empresa.create({razaoSocial: 'Imobiliaria Gia', cnpj: '88888888'})
 
-estado = Estado.create({nome: 'Paraná', uf: 'PR', empresa: empresa})
-municipio = Municipio.create({nome: 'Toledo', estado: estado})
-bairro = Bairro.create({nome: 'Jd. la Salle', municipio: municipio})
-rua = Rua.create({nome: 'Rua da Faculdade', bairro: bairro})
+estado_pr = Estado.create({nome: 'Paraná', uf: 'PR', empresa: empresa})
+estado_sc = Estado.create({nome: 'Santa Catarina', uf: 'SC', empresa: empresa})
+estado_rs = Estado.create({nome: 'Rio Grande do Sul', uf: 'RS', empresa: empresa})
+
+municipio_toledo = Municipio.create({nome: 'Toledo', estado: estado_pr})
+municipio_blum = Municipio.create({nome: 'Blumenau', estado: estado_sc})
+municipio_pomer = Municipio.create({nome: 'Pomerode', estado: estado_sc})
+municipio_porto_alegre = Municipio.create({nome: 'Porto Alegre', estado: estado_rs})
+
+bairro_la_salle = Bairro.create({nome: 'Jd. la Salle', municipio: municipio_toledo})
+bairro_giselle = Bairro.create({nome: 'Jd. Giselle', municipio: municipio_toledo})
+bairro_centro = Bairro.create({nome: 'Centro', municipio: municipio_blum})
+
+rua_faculdade = Rua.create({nome: 'Rua da Faculdade', bairro: bairro_la_salle})
+rua_brasil = Rua.create({nome: 'Rua da Brasil', bairro: bairro_la_salle})
+rua_teste = Rua.create({nome: 'Rua do Teste', bairro: bairro_centro})
 
 tipoImovel = TipoImovel.create({nome: 'Apartamento', empresa: empresa})
 tipoComodo = TipoComodo.create({nome: 'Quartos', empresa: empresa})
