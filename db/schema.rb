@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150124205716) do
+ActiveRecord::Schema.define(version: 20150221014917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -345,6 +345,16 @@ ActiveRecord::Schema.define(version: 20150124205716) do
 
   add_index "tipos_imovel_tipos_comodo", ["tipoComodo_id"], name: "index_tipos_imovel_tipos_comodo_on_tipoComodo_id", using: :btree
   add_index "tipos_imovel_tipos_comodo", ["tipoImovel_id"], name: "index_tipos_imovel_tipos_comodo_on_tipoImovel_id", using: :btree
+
+  create_table "usuarios", force: true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "nome"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "vendas_alugueis", force: true do |t|
     t.integer  "contratoPrestacaoServico_id"

@@ -1,6 +1,6 @@
 class Imovel < ActiveRecord::Base
   after_initialize :instanciar_endereco
-  
+
   belongs_to :angariador, class_name: 'Funcionario'
   belongs_to :proprietario, class_name: 'Cliente'
   belongs_to :tipoImovel
@@ -9,7 +9,7 @@ class Imovel < ActiveRecord::Base
 
   accepts_nested_attributes_for :endereco
 
-  validates :proprietario, :tipo, presence: true
+  validates :proprietario, :tipoImovel, presence: true
 
   private
 
