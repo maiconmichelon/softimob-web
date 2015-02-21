@@ -1,22 +1,22 @@
-<%= link_to "Home", root_path, :class => 'brand' %>
+<%= link_to "Home", nil, :class => 'brand' %>
 <ul class="nav">
-  <% if user_signed_in? %>
+  <% if true %>
     <li>
-    <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>        
+    <%= link_to('Logout', nil, :method=>'delete') %>
     </li>
   <% else %>
     <li>
-    <%= link_to "Sign in with Twitter", "/auth/twitter" %> 
+    <%= link_to "Sign in with Twitter", "/auth/twitter" %>
     <!-- <%= link_to('Login', new_user_session_path)  %>  !-->
     </li>
   <% end %>
-  <% if user_signed_in? %>
+  <% if true %>
     <li>
-    <%= link_to('Edit account', edit_user_registration_path) %>
+    <%= link_to('Edit account', nil) %>
     </li>
   <% else %>
     <li>
     <%= link_to('Sign up', new_user_registration_path)  %>
     </li>
   <% end %>
-</ul>
+</ul>  

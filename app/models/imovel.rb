@@ -1,4 +1,6 @@
 class Imovel < ActiveRecord::Base
+  after_initialize :instanciar_endereco
+  
   belongs_to :angariador, class_name: 'Funcionario'
   belongs_to :proprietario, class_name: 'Cliente'
   belongs_to :tipoImovel
@@ -9,8 +11,10 @@ class Imovel < ActiveRecord::Base
 
   validates :proprietario, :tipo, presence: true
 
-  def initialize
-    endereco = Endereco.new
+  private
+
+  def instanciar_endereco
+    self.endereco ||= Endereco.new
   end
 
 end

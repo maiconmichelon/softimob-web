@@ -1,5 +1,5 @@
 ActiveSupport::Inflector.inflections(:en) do |inflect|
-   inflect.clear
+  inflect.clear
 
   inflect.plural(/$/, 's')
   inflect.plural(/(s)$/i, '\1')
@@ -61,6 +61,5 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.irregular('plano_conta', 'planos_conta')
   inflect.irregular('origem_conta', 'origens_conta')
   inflect.irregular('conta_pagar_receber', 'contas_pagar_receber')
-
 
 end

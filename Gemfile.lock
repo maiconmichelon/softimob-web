@@ -84,9 +84,9 @@ GEM
     omniauth (1.2.2)
       hashie (>= 1.2, < 4)
       rack (~> 1.0)
-    omniauth-google_oauth2 (0.1.5)
-      omniauth (~> 1.0)
-      omniauth-oauth2
+    omniauth-google-oauth2 (0.2.6)
+      omniauth (> 1.0)
+      omniauth-oauth2 (~> 1.1)
     omniauth-oauth2 (1.2.0)
       faraday (>= 0.8, < 0.10)
       multi_json (~> 1.3)
@@ -198,8 +198,7 @@ DEPENDENCIES
   email_validator
   high_voltage
   jquery-rails
-  omniauth
-  omniauth-google_oauth2
+  omniauth-google-oauth2
   pg
   quiet_assets
   rails (= 4.1.0)
