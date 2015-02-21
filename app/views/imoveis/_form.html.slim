@@ -9,5 +9,34 @@
     = f.input :observacoes
     = f.association :endereco
 
+    .
+      ul class="nav nav-tabs"
+        li role="presentation" class="active": a href = "#endereco" data-toggle="tab" Endereço
+        li role="presentation": a href = "#comodos" data-toggle="tab" Cômodos
+
+      .tab-content
+        .tab-pane id="endereco" class="active"
+          = f.simple_fields_for :endereco do |fe|
+            = render 'enderecos/form', f: fe
+
+        .tab-pane id="comodos"
+          table class="table"
+            thead
+              tr
+                th Cômodo
+                th Quantidade
+                th Descrição
+                th
+                th
+            tbody
+              - @imovel.comodos.each do |comodo|
+                tr
+                  td = comodo.tipo.descricao
+                  td = comodo.quantidade
+                  td = comodo.descricao
+                  td = link_to 'Editar', comodo
+                  td = link_to 'Remover', comodo
+          = button_to_function "Greeting", "alert('Hello world!')", class: "ok"
+
   .form-actions
     = f.button :submit

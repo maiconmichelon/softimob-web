@@ -7,6 +7,8 @@ class Imovel < ActiveRecord::Base
   belongs_to :endereco
   belongs_to :empresa
 
+  has_many :comodos
+
   accepts_nested_attributes_for :endereco
 
   validates :proprietario, :tipoImovel, presence: true
