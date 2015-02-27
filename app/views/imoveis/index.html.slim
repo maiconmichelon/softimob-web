@@ -1,6 +1,6 @@
-h1 Listing imoveis
+h1 Imóveis
 
-table
+table class = "table"
   thead
     tr
       th Metragem
@@ -22,10 +22,10 @@ table
         td = imovel.tipoImovel
         td = imovel.observacoes
         td = imovel.endereco
-        td = link_to 'Show', imovel
-        td = link_to 'Edit', edit_imovel_path(imovel)
-        td = link_to 'Destroy', imovel, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', imovel
+        td = link_to 'Editar', edit_imovel_path(imovel)
+        td = link_to 'Excluir', imovel, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Imovel', new_imovel_path
+= link_to 'Novo', new_imovel_path

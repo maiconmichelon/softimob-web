@@ -1,16 +1,16 @@
-h1 Listing funcionarios
+h1 Funcionários
 
-table
+table class = "table"
   thead
     tr
       th Nome
       th Telefone
       th Celular
       th Email
-      th Datanascimento
-      th Endereco
+      th Data de Nascimento
+      th Endereço
       th Departamento
-      th Dataadmissao
+      th Admissão
       th
       th
       th
@@ -26,10 +26,10 @@ table
         td = funcionario.endereco
         td = funcionario.departamento
         td = funcionario.dataAdmissao
-        td = link_to 'Show', funcionario
-        td = link_to 'Edit', edit_funcionario_path(funcionario)
-        td = link_to 'Destroy', funcionario, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', funcionario
+        td = link_to 'Editar', edit_funcionario_path(funcionario)
+        td = link_to 'Excluir', funcionario, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Funcionario', new_funcionario_path
+= link_to 'Novo', new_funcionario_path

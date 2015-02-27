@@ -1,17 +1,17 @@
-h1 Listing pessoas_juridicas
+h1 Pessoas Jurídicas
 
-table
+table class = "table"
   thead
     tr
       th Nome
       th Telefone
       th Celular
       th Email
-      th Datanascimento
-      th Endereco
+      th Data de Nascimento
+      th Endereço
       th Cnpj
-      th Inscricaoestadual
-      th SocioProprietario
+      th Inscrição Estadual
+      th Sócio
       th
       th
       th
@@ -28,10 +28,10 @@ table
         td = pessoa_juridica.cnpj
         td = pessoa_juridica.inscricaoEstadual
         td = pessoa_juridica.socioProprietario
-        td = link_to 'Show', pessoa_juridica
-        td = link_to 'Edit', edit_pessoa_juridica_path(pessoa_juridica)
-        td = link_to 'Destroy', pessoa_juridica, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', pessoa_juridica
+        td = link_to 'Editar', edit_pessoa_juridica_path(pessoa_juridica)
+        td = link_to 'Excluir', pessoa_juridica, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Pessoa juridica', new_pessoa_juridica_path
+= link_to 'Novo', new_pessoa_juridica_path

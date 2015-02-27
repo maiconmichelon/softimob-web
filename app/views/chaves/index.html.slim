@@ -1,11 +1,11 @@
-h1 Listing chaves
+h1 Chaves
 
-table
+table class="table"
   thead
     tr
-      th Numero
-      th Imovel
-      th Localizacao
+      th Número
+      th Imóvel
+      th Localização
       th
       th
       th
@@ -16,10 +16,10 @@ table
         td = chave.numero
         td = chave.imovel
         td = chave.localizacao
-        td = link_to 'Show', chave
-        td = link_to 'Edit', edit_chave_path(chave)
-        td = link_to 'Destroy', chave, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', chave
+        td = link_to 'Editar', edit_chave_path(chave)
+        td = link_to 'Excluir', chave, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Chave', new_chave_path
+= link_to 'Novo', new_chave_path

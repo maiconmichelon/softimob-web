@@ -1,27 +1,27 @@
-h1 Listing vistoria
+h1 Vistorias
 
-table
+table class = "table"
   thead
     tr
       th Data
-      th Funcionario
-      th Observacoes
-      th Vendaaluguel
+      th Funcionário
+      th Observações
+      th Venda ou Aluguel
       th
       th
       th
 
   tbody
-    - @vistoria.each do |vistorium|
+    - @vistoria.each do |vistoria|
       tr
-        td = vistorium.data
-        td = vistorium.funcionario
-        td = vistorium.observacoes
-        td = vistorium.vendaAluguel
-        td = link_to 'Show', vistorium
-        td = link_to 'Edit', edit_vistorium_path(vistorium)
-        td = link_to 'Destroy', vistorium, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = vistoria.data
+        td = vistoria.funcionario
+        td = vistoria.observacoes
+        td = vistoria.vendaAluguel
+        td = link_to 'Mostrar', vistoria
+        td = link_to 'Editar', edit_vistoria_path(vistoria)
+        td = link_to 'Excluir', vistoria, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Vistorium', new_vistorium_path
+= link_to 'Novo', new_vistoria_path

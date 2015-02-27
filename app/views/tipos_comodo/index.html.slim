@@ -1,6 +1,6 @@
-h1 Listing tipo_comodos
+h1 Tipos de Cômodo
 
-table
+table class = "table"
   thead
     tr
       th Nome
@@ -12,10 +12,10 @@ table
     - @tipos_comodo.each do |tipo_comodo|
       tr
         td = tipo_comodo.nome
-        td = link_to 'Show', tipo_comodo
-        td = link_to 'Edit', edit_tipo_comodo_path(tipo_comodo)
-        td = link_to 'Destroy', tipo_comodo, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', tipo_comodo
+        td = link_to 'Editar', edit_tipo_comodo_path(tipo_comodo)
+        td = link_to 'Excluir', tipo_comodo, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Tipo comodo', new_tipo_comodo_path
+= link_to 'Novo', new_tipo_comodo_path

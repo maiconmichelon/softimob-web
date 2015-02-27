@@ -1,6 +1,6 @@
-h1 Listing ruas
+h1 Ruas
 
-table
+table class = "table"
   thead
     tr
       th Nome
@@ -14,10 +14,10 @@ table
       tr
         td = rua.nome
         td = rua.bairro
-        td = link_to 'Show', rua
-        td = link_to 'Edit', edit_rua_path(rua)
-        td = link_to 'Destroy', rua, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', rua
+        td = link_to 'Editar', edit_rua_path(rua)
+        td = link_to 'Excluir', rua, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Rua', new_rua_path
+= link_to 'Novo', new_rua_path

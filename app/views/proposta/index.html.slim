@@ -1,41 +1,40 @@
-h1 Listing proposta
+h1 Propostas
 
-table
+table class = "table"
   thead
     tr
       th Data
       th Datafechamento
       th Cliente
-      th Funcionario
+      th Funcionário
       th Valor
-      th Valor
-      th Observacoes
+      th Observações
       th Status
       th Proposta
-      th Tipocontraproposta
-      th Imovel
+      th Contra-proposta
+      th Imóvel
       th
       th
       th
 
   tbody
-    - @proposta.each do |propostum|
+    - @proposta.each do |proposta|
       tr
-        td = propostum.data
-        td = propostum.dataFechamento
-        td = propostum.cliente
-        td = propostum.funcionario
-        td = propostum.valor
-        td = propostum.valor
-        td = propostum.observacoes
-        td = propostum.status
-        td = propostum.proposta
-        td = propostum.tipoContraProposta
-        td = propostum.imovel
-        td = link_to 'Show', propostum
-        td = link_to 'Edit', edit_propostum_path(propostum)
-        td = link_to 'Destroy', propostum, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = proposta.data
+        td = proposta.dataFechamento
+        td = proposta.cliente
+        td = proposta.funcionario
+        td = proposta.valor
+        td = proposta.valor
+        td = proposta.observacoes
+        td = proposta.status
+        td = proposta.proposta
+        td = proposta.tipoContraProposta
+        td = proposta.imovel
+        td = link_to 'Mostrar', proposta
+        td = link_to 'Editar', edit_proposta_path(proposta)
+        td = link_to 'Excluir', proposta, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Propostum', new_propostum_path
+= link_to 'Novo', new_proposta_path

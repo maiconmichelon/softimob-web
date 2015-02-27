@@ -1,11 +1,11 @@
-h1 Listing placas
+h1 Placas
 
-table
+table class = "table"
   thead
     tr
       th Numero
       th Responsável
-      th Imovel
+      th Imóvel
       th
       th
       th
@@ -16,10 +16,10 @@ table
         td = placa.numero
         td = placa.responsavel
         td = placa.imovel
-        td = link_to 'Show', placa
-        td = link_to 'Edit', edit_placa_path(placa)
-        td = link_to 'Destroy', placa, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', placa
+        td = link_to 'Editar', edit_placa_path(placa)
+        td = link_to 'Excluir', placa, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Placa', new_placa_path
+= link_to 'Novo', new_placa_path

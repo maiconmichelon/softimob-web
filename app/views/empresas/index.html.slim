@@ -1,6 +1,6 @@
-h1 Listing empresas
+h1 Empresas
 
-table
+table class="table"
   thead
     tr
       th Nome
@@ -14,10 +14,10 @@ table
       tr
         td = empresa.nome
         td = empresa.cnpj
-        td = link_to 'Show', empresa
-        td = link_to 'Edit', edit_empresa_path(empresa)
-        td = link_to 'Destroy', empresa, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', empresa
+        td = link_to 'Editar', edit_empresa_path(empresa)
+        td = link_to 'Excluir', empresa, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Empresa', new_empresa_path
+= link_to 'Novo', new_empresa_path

@@ -1,16 +1,15 @@
-h1 Listing reservas
+h1 Reservas
 
-table
+table class = "table"
   thead
     tr
-      th Datareserva
-      th Datavencimento
+      th Data
+      th Vencimento
       th Cliente
-      th Funcionario
+      th Funcionário
       th Valor
-      th Valor
-      th Observacoes
-      th Imovel
+      th Observações
+      th Imóvel
       th Resolvido
       th
       th
@@ -28,10 +27,10 @@ table
         td = reserva.observacoes
         td = reserva.imovel
         td = reserva.resolvido
-        td = link_to 'Show', reserva
-        td = link_to 'Edit', edit_reserva_path(reserva)
-        td = link_to 'Destroy', reserva, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', reserva
+        td = link_to 'Editar', edit_reserva_path(reserva)
+        td = link_to 'Excluir', reserva, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Reserva', new_reserva_path
+= link_to 'Novo', new_reserva_path

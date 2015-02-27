@@ -1,6 +1,6 @@
-h1 Listing check_lists
+h1 Check-lists
 
-table
+table class="table"
   thead
     tr
       th Nome
@@ -12,10 +12,10 @@ table
     - @check_lists.each do |check_list|
       tr
         td = check_list.nome
-        td = link_to 'Show', check_list
-        td = link_to 'Edit', edit_check_list_path(check_list)
-        td = link_to 'Destroy', check_list, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', check_list
+        td = link_to 'Editar', edit_check_list_path(check_list)
+        td = link_to 'Excluir', check_list, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Check list', new_check_list_path
+= link_to 'Novo', new_check_list_path

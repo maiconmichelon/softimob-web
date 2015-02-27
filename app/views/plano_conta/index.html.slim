@@ -1,9 +1,9 @@
-h1 Listing plano_conta
+h1 Planos de Conta
 
-table
+table class = "table"
   thead
     tr
-      th Codigo
+      th Código
       th Nome
       th Tipo
       th Ativo
@@ -20,10 +20,10 @@ table
         td = plano_contum.tipo
         td = plano_contum.ativo
         td = plano_contum.empresa
-        td = link_to 'Show', plano_contum
-        td = link_to 'Edit', edit_plano_contum_path(plano_contum)
-        td = link_to 'Destroy', plano_contum, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', plano_contum
+        td = link_to 'Editar', edit_plano_contum_path(plano_contum)
+        td = link_to 'Excluir', plano_contum, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Plano contum', new_plano_contum_path
+= link_to 'Novo', new_plano_contum_path

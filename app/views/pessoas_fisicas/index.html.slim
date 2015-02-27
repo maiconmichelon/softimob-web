@@ -1,18 +1,18 @@
-h1 Listing pessoa_fisicas
+h1 Pessoas Físicas
 
-table
+table class = "table"
   thead
     tr
       th Nome
       th Telefone
       th Celular
       th Email
-      th Datanascimento
-      th Endereco
+      th Data de Nascimento
+      th Endereço
       th Cpf
       th Rg
-      th Filiacao
-      th Estadocivil
+      th Filiação
+      th Estado Civil
       th Nacionalidade
       th
       th
@@ -32,10 +32,10 @@ table
         td = pessoa_fisica.filiacao
         td = pessoa_fisica.estadoCivil
         td = pessoa_fisica.nacionalidade
-        td = link_to 'Show', pessoa_fisica
-        td = link_to 'Edit', edit_pessoa_fisica_path(pessoa_fisica)
-        td = link_to 'Destroy', pessoa_fisica, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', pessoa_fisica
+        td = link_to 'Editar', edit_pessoa_fisica_path(pessoa_fisica)
+        td = link_to 'Excluir', pessoa_fisica, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Pessoa fisica', new_pessoa_fisica_path
+= link_to 'Novo', new_pessoa_fisica_path

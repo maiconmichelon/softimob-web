@@ -1,6 +1,6 @@
-h1 Listing modelos_contrato
+h1 Modelos de Contrato
 
-table
+table class = "table"
   thead
     tr
       th Nome
@@ -12,10 +12,10 @@ table
     - @modelos_contrato.each do |modelo_contrato|
       tr
         td = modelo_contrato.nome
-        td = link_to 'Show', modelo_contrato
-        td = link_to 'Edit', edit_modelo_contrato_path(modelo_contrato)
-        td = link_to 'Destroy', modelo_contrato, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', modelo_contrato
+        td = link_to 'Editar', edit_modelo_contrato_path(modelo_contrato)
+        td = link_to 'Excluir', modelo_contrato, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Modelo contrato', new_modelo_contrato_path
+= link_to 'Novo', new_modelo_contrato_path

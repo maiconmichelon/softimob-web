@@ -1,6 +1,6 @@
-h1 Listing municipios
+h1 Municípios
 
-table
+table class = "table"
   thead
     tr
       th Nome
@@ -14,10 +14,10 @@ table
       tr
         td = municipio.nome
         td = municipio.estado
-        td = link_to 'Show', municipio
-        td = link_to 'Edit', edit_municipio_path(municipio)
-        td = link_to 'Destroy', municipio, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', municipio
+        td = link_to 'Editar', edit_municipio_path(municipio)
+        td = link_to 'Excluir', municipio, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Municipio', new_municipio_path
+= link_to 'Novo', new_municipio_path

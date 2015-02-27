@@ -1,20 +1,19 @@
-h1 Listing contratos_prestacao_servico
+h1 Contratos de Prestação de Serviço
 
-table
+table class="table"
   thead
     tr
-      th Valorimovel
-      th Valorimovel
+      th Valor do Imóvel
       th Tipo
-      th Imovel
+      th Imóvel
       th Divulgar
-      th Datainicio
-      th Datavencimento
-      th Funcionario
+      th Início
+      th Vencimento
+      th Funcionário
       th Cliente
       th Resolvido
-      th Datafechamento
-      th Modelocontrato
+      th Fechamento
+      th Contrato
       th
       th
       th
@@ -22,7 +21,6 @@ table
   tbody
     - @contrato_prestacao_servicos.each do |contrato_prestacao_servico|
       tr
-        td = contrato_prestacao_servico.valorImovel
         td = contrato_prestacao_servico.valorImovel
         td = contrato_prestacao_servico.tipo
         td = contrato_prestacao_servico.imovel
@@ -34,10 +32,10 @@ table
         td = contrato_prestacao_servico.resolvido
         td = contrato_prestacao_servico.dataFechamento
         td = contrato_prestacao_servico.modeloContrato
-        td = link_to 'Show', contrato_prestacao_servico
-        td = link_to 'Edit', edit_contrato_prestacao_servico_path(contrato_prestacao_servico)
-        td = link_to 'Destroy', contrato_prestacao_servico, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', contrato_prestacao_servico
+        td = link_to 'Editar', edit_contrato_prestacao_servico_path(contrato_prestacao_servico)
+        td = link_to 'Excluir', contrato_prestacao_servico, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Contrato prestacao servico', new_contrato_prestacao_servico_path
+= link_to 'Novo', new_contrato_prestacao_servico_path

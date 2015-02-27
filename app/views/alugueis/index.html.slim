@@ -1,12 +1,12 @@
-h1 Listing aluguéis
+h1 Aluguéis
 
-table
+table class="table"
   thead
     tr
       th Cliente
-      th Datavencimento
+      th Vencimento
       th Resolvido
-      th Datafechamento
+      th Fechamento
       th
       th
       th
@@ -18,10 +18,10 @@ table
         td = aluguel.dataVencimento
         td = aluguel.resolvido
         td = aluguel.dataFechamento
-        td = link_to 'Show', aluguel
-        td = link_to 'Edit', edit_aluguel_path(aluguel)
-        td = link_to 'Destroy', aluguel, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', aluguel
+        td = link_to 'Editar', edit_aluguel_path(aluguel)
+        td = link_to 'Excluir', aluguel, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Aluguel', new_aluguel_path
+= link_to 'Novo', new_aluguel_path

@@ -1,9 +1,9 @@
-h1 Listing vendas
+h1 Vendas
 
-table
+table class = "table"
   thead
     tr
-      th Proprietario
+      th Proprietário
       th Fechado
       th
       th
@@ -14,10 +14,10 @@ table
       tr
         td = venda.proprietario
         td = venda.fechado
-        td = link_to 'Show', venda
-        td = link_to 'Edit', edit_venda_path(venda)
-        td = link_to 'Destroy', venda, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', venda
+        td = link_to 'Editar', edit_venda_path(venda)
+        td = link_to 'Excluir', venda, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Venda', new_venda_path
+= link_to 'Novo', new_venda_path

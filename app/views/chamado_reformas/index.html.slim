@@ -1,13 +1,13 @@
-h1 Listing chamado_reformas
+h1 Chamados de Reforma
 
-table
+table class="table"
   thead
     tr
       th Aluguel
       th Data
-      th Funcionario
+      th Funcionário
       th Problema
-      th Finalizacaochamadoreforma
+      th Finalização
       th
       th
       th
@@ -20,10 +20,10 @@ table
         td = chamado_reforma.funcionario
         td = chamado_reforma.problema
         td = chamado_reforma.finalizacaoChamadoReforma
-        td = link_to 'Show', chamado_reforma
-        td = link_to 'Edit', edit_chamado_reforma_path(chamado_reforma)
-        td = link_to 'Destroy', chamado_reforma, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', chamado_reforma
+        td = link_to 'Editar', edit_chamado_reforma_path(chamado_reforma)
+        td = link_to 'Excluir', chamado_reforma, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Chamado reforma', new_chamado_reforma_path
+= link_to 'Novo', new_chamado_reforma_path

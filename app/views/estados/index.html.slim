@@ -1,6 +1,6 @@
-h1 Listing estados
+h1 Estados
 
-table
+table class = "table"
   thead
     tr
       th Nome
@@ -14,10 +14,10 @@ table
       tr
         td = estado.nome
         td = estado.uf
-        td = link_to 'Show', estado
-        td = link_to 'Edit', edit_estado_path(estado)
-        td = link_to 'Destroy', estado, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', estado, class: 'btn btn-xs btn-primary'
+        td = link_to 'Editar', edit_estado_path(estado), class: 'btn-warning btn btn-xs'
+        td = link_to 'Excluir', estado, data: {:confirm => 'Você tem certeza ?'}, class: 'btn-danger btn btn-xs', :method => :delete
 
 br
 
-= link_to 'New Estado', new_estado_path
+= link_to 'Novo', new_estado_path

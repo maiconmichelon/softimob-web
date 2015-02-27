@@ -1,6 +1,6 @@
-h1 Listing clientes
+h1 Clientes
 
-table
+table class="table"
   thead
     tr
       th Nome
@@ -22,10 +22,10 @@ table
         td = cliente.email
         td = cliente.dataNascimento
         td = cliente.endereco
-        td = link_to 'Show', cliente
-        td = link_to 'Edit', edit_cliente_path(cliente)
-        td = link_to 'Destroy', cliente, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', cliente
+        td = link_to 'Editar', edit_cliente_path(cliente)
+        td = link_to 'Excluir', cliente, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Cliente', new_cliente_path
+= link_to 'Novo', new_cliente_path

@@ -1,10 +1,10 @@
-h1 Listing bairros
+h1 Bairros
 
-table
+table class="table"
   thead
     tr
       th Nome
-      th Municipio
+      th Município
       th
       th
       th
@@ -14,10 +14,10 @@ table
       tr
         td = bairro.nome
         td = bairro.municipio
-        td = link_to 'Show', bairro
-        td = link_to 'Edit', edit_bairro_path(bairro)
-        td = link_to 'Destroy', bairro, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', bairro
+        td = link_to 'Editar', edit_bairro_path(bairro)
+        td = link_to 'Excluir', bairro, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Bairro', new_bairro_path
+= link_to 'Novo', new_bairro_path

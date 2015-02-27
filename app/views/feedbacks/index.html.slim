@@ -1,13 +1,13 @@
-h1 Listing feedbacks
+h1 Feedbacks
 
-table
+table class = "table"
   thead
     tr
       th Data
-      th Funcionario
+      th Funcionário
       th Cliente
-      th Observacoes
-      th Imovel
+      th Observações
+      th Imóvel
       th
       th
       th
@@ -20,10 +20,10 @@ table
         td = feedback.cliente
         td = feedback.observacoes
         td = feedback.imovel
-        td = link_to 'Show', feedback
-        td = link_to 'Edit', edit_feedback_path(feedback)
-        td = link_to 'Destroy', feedback, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', feedback
+        td = link_to 'Editar', edit_feedback_path(feedback)
+        td = link_to 'Excluir', feedback, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Feedback', new_feedback_path
+= link_to 'Novo', new_feedback_path

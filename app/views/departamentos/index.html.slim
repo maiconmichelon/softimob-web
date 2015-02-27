@@ -1,6 +1,6 @@
-h1 Listing departamentos
+h1 Departamentos
 
-table
+table class="table"
   thead
     tr
       th Nome
@@ -12,10 +12,10 @@ table
     - @departamentos.each do |departamento|
       tr
         td = departamento.nome
-        td = link_to 'Show', departamento
-        td = link_to 'Edit', edit_departamento_path(departamento)
-        td = link_to 'Destroy', departamento, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Mostrar', departamento
+        td = link_to 'Editar', edit_departamento_path(departamento)
+        td = link_to 'Excluir', departamento, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
 
 br
 
-= link_to 'New Departamento', new_departamento_path
+= link_to 'Novo', new_departamento_path
