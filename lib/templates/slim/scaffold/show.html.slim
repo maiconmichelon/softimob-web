@@ -3,6 +3,6 @@
   = s.<%= attribute.reference? ? :association : :attribute %> :<%= attribute.name %>
 <% end -%>
 
-= link_to 'Edit', edit_<%= singular_name %>_path(@<%= singular_name %>)
+= link_to 'Editar', edit_<%= singular_name %>_path(@<%= singular_name %>)
 |
-= link_to 'Back', <%= plural_name %>_path
+= link_to 'Voltar', <%= plural_name %>_path

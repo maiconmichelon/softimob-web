@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
     @current_user ||= Usuario.find(session[:usuario_id]) if session[:usuario_id]
   end
 
+  def endereco_params
+    [:cep, :numero, :rua_id, :complemento]
+  end
+
 end

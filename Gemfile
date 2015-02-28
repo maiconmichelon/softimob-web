@@ -29,11 +29,12 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'spring',        group: :development
-gem 'bootstrap-sass'
+gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'spring', group: :development
+gem 'bootstrap-sass', '~> 3.3.3'
 gem 'high_voltage'
 gem 'pg'
 gem 'simple_form'
 gem 'slim-rails'
 gem 'therubyracer', :platform=>:ruby
+gem 'sprockets-rails'

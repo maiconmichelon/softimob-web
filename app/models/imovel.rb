@@ -11,7 +11,7 @@ class Imovel < ActiveRecord::Base
 
   accepts_nested_attributes_for :endereco
 
-  validates :proprietario, :tipoImovel, presence: true
+  validates :proprietario, :tipoImovel, :metragem, presence: true
 
   private
 

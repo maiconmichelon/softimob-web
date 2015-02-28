@@ -5,5 +5,7 @@ ShowFor.setup do |config|
   # The tag used to wrap each label. Default is :strong.
   config.label_tag = :dt
   # The tag used to wrap each content (value). Default is nil.
-  config.content_tag = :dd
+  # config.content_tag = :dd
+
+  config.label_class = nil
 end

@@ -42,6 +42,6 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
   get 'home/show'
 
-  root to: "home#show"
+  root to: "home#index"
 
 end

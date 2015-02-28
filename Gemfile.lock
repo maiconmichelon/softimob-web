@@ -28,14 +28,18 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    autoprefixer-rails (5.1.7)
+      execjs
+      json
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.3.1.0)
-      sass (~> 3.2)
+    bootstrap-sass (3.3.3)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.2.19)
     builder (3.2.2)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -193,7 +197,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
-  bootstrap-sass
+  bootstrap-sass (~> 3.3.3)
   date_validator
   email_validator
   high_voltage
@@ -211,6 +215,7 @@ DEPENDENCIES
   simple_form
   slim-rails
   spring
+  sprockets-rails
   therubyracer
   thin
   turbolinks

@@ -42,6 +42,7 @@ class ImoveisController < ApplicationController
     end
 
     def imovel_params
-      params.require(:imovel).permit(:ativo, :metragem, :angariador_id, :proprietario_id, :tipoImovel_id, :observacoes, :endereco_id, :empresa_id)
+      params.require(:imovel).permit(:ativo, :metragem, :angariador_id, :proprietario_id,
+        :tipoImovel_id, :observacoes, :endereco_id, :empresa_id, endereco_attributes: endereco_params)
     end
 end
