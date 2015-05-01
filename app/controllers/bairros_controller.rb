@@ -1,52 +1,42 @@
-class BairrosController < ApplicationController
-  before_action :set_bairro, only: [:show, :edit, :update, :destroy]
+class EmpresaController < ApplicationController
+  before_action :set_empresa, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html, :json
-
-  def index
-    @bairros = Bairro.all
-    respond_with(@bairros)
-  end
+  respond_to :html
 
   def show
-    respond_with(@bairro)
-  end
-
-  def bairros_by_municipio
-    @bairros = Bairro.where municipio_id: params[:municipio_id]
-    respond_with(@bairros)
+    respond_with(@empresa)
   end
 
   def new
-    @bairro = Bairro.new
-    respond_with(@bairro)
+    @empresa = Empresa.new
+    respond_with(@empresa)
   end
 
   def edit
   end
 
   def create
-    @bairro = Bairro.new(bairro_params)
-    @bairro.save
-    respond_with(@bairro)
+    @empresa = Empresa.new(empresa_params)
+    @empresa.save
+    respond_with(@empresa)
   end
 
   def update
-    @bairro.update(bairro_params)
-    respond_with(@bairro)
+    @empresa.update(empresa_params)
+    respond_with(@empresa)
   end
 
   def destroy
-    @bairro.destroy
-    respond_with(@bairro)
+    @empresa.destroy
+    respond_with(@empresa)
   end
 
   private
-    def set_bairro
-      @bairro = Bairro.find(params[:id])
+    def set_empresa
+      @empresa = Empresa.find(params[:id])
     end
 
-    def bairro_params
-      params.require(:bairro).permit(:nome, :municipio_id)
+    def empresa_params
+      params.require(:empresa).permit(:razaoSocial, :cnpj)
     end
 end

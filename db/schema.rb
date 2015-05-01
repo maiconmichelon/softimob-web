@@ -146,12 +146,9 @@ ActiveRecord::Schema.define(version: 20150221153445) do
 
   create_table "empresas", force: true do |t|
     t.string   "razaoSocial"
-    t.string   "cnpj"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "empresas", ["cnpj"], name: "index_empresas_on_cnpj", unique: true, using: :btree
 
   create_table "enderecos", force: true do |t|
     t.string   "cep"

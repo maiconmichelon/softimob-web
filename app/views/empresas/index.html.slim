@@ -1,23 +1,18 @@
-h1 Empresas
+- if current_user
+  h1 Empresas
 
-table class="table"
-  thead
-    tr
-      th Nome
-      th Cnpj
-      th
-      th
-      th
-
-  tbody
-    - @empresas.each do |empresa|
+  table class="table"
+    thead
       tr
-        td = empresa.nome
-        td = empresa.cnpj
-        td = link_to 'Mostrar', empresa
-        td = link_to 'Editar', edit_empresa_path(empresa)
-        td = link_to 'Excluir', empresa, data: {:confirm => 'Você tem certeza ?'}, :method => :delete
+        th Razão Social
+        th
+        th
+        th
 
-br
-
-= link_to 'Novo', new_empresa_path
+    tbody
+      - @empresas.each do |empresa|
+        tr
+          td = empresa.razaoSocial
+          td = link_to 'Entrar', empresa
+          td = link_to 'Editar', edit_empresa_path(empresa)
+          td = link_to 'Excluir', empresa, data: {:confirm => 'Você tem certeza ?'}, :method => :delete

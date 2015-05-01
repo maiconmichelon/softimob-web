@@ -1,7 +1,7 @@
 class Empresa < ActiveRecord::Base
-  has_many :usuarioempresas
-  has_many :usuarios, :through => :usuarioempresas
+  has_many :usuarioEmpresas
+  has_many :usuarios, :through => :usuarioEmpresas
 
-  validates :razaoSocial, :cnpj, presence: true
+  validates :razaoSocial, presence: true
 
 end

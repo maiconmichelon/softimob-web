@@ -8,7 +8,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <% if current_user %>
-        <%= render 'layouts/navbar_left_with_login' %>
+        <% if current_empresa %>
+          <%= render 'layouts/navbar_left_with_login_and_empresa' %>
+        <% else %>
+          <%= render 'layouts/navbar_left_with_login_without_empresa' %>
+        <% end %>
       <% end %>
 
       <ul class="nav navbar-nav navbar-right">

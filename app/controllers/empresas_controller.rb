@@ -1,14 +1,15 @@
 class EmpresasController < ApplicationController
-  before_action :set_empresa, only: [:show, :edit, :update, :destroy]
+  before_action :set_empresa, only: [:show, :edit, :update, :destroy, :logar]
 
   respond_to :html
 
   def index
-    @empresas = Empresa.all
+    @empresas = current_user ? current_user.empresas : []
     respond_with(@empresas)
   end
 
   def show
+    current_empresa = @empresa
     respond_with(@empresa)
   end
 
@@ -22,13 +23,14 @@ class EmpresasController < ApplicationController
 
   def create
     @empresa = Empresa.new(empresa_params)
+    @empresa.usuarios << current_user
     @empresa.save
-    respond_with(@empresa)
+    redirect_to action: 'index'
   end
 
   def update
     @empresa.update(empresa_params)
-    respond_with(@empresa)
+    redirect_to action: 'index'
   end
 
   def destroy
@@ -42,6 +44,6 @@ class EmpresasController < ApplicationController
     end
 
     def empresa_params
-      params.require(:empresa).permit(:nome, :cnpj)
+      params.require(:empresa).permit(:razaoSocial)
     end
 end
