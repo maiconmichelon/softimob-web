@@ -14,7 +14,7 @@ class ImoveisController < ApplicationController
 
   def new
     @imovel = Imovel.new
-    respond_with(@imovel)
+    respond_with(@imovel, @empresa)
   end
 
   def edit
@@ -38,7 +38,8 @@ class ImoveisController < ApplicationController
 
   private
     def set_imovel
-      @imovel = Imovel.find(params[:id])
+      @empresa = Empresa.find(params[:empresa_id])
+      @imovel = @empresa.imoveis.find(params[:id])
     end
 
     def imovel_params

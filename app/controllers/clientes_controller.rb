@@ -38,7 +38,8 @@ class ClientesController < ApplicationController
 
   private
     def set_cliente
-      @cliente = Cliente.find(params[:id])
+      @empresa = Empresa.find(params[:empresa_id])
+      @cliente = @empresa.clientes.find(params[:id])
     end
 
     def cliente_params

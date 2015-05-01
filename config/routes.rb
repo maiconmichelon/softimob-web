@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :empresas do 
+  resources :empresas do
     resources :vistorias
     resources :chaves
     resources :chamados_reforma
